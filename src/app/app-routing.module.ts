@@ -7,14 +7,16 @@ import { BaseLayoutComponent } from './layout/base-layout/base-layout.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  {
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  /*, {
     path: '',
     component: BaseLayoutComponent,
     children: [{
       path: '',
       loadChildren: './layout/base-layout/base-layout.module#BaseLayoutModule'
-    }]
-  }
+    }
+  ]
+  }*/
 ];
 
 @NgModule({
