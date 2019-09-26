@@ -26,9 +26,9 @@ export class FormValidation {
             maxlength: `Campo precisar ter no máximo ${validatorValue.requiredLength} caracteres`,
             email: `E-mail inválido.`,
             notSame: `A senha deve ser igual à primeira`,
-            cnpjValidador: `CNPJ Inválido`,
-            equalDigits: `CNPJ Inválido`,
-            digit: `CNPJ Inválido`
+            cnpjValidador: `Inválido`,
+            equalDigits: `Todos os números são iguais`,
+            digit: `Dígito verificador inválido`
         };
 
         return config[validatorName];
