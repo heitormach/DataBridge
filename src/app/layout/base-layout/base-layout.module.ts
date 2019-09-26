@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseLayoutRoutes } from './base-layout.routing';
 import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 import { LoginModule } from 'src/app/login/login.module';
+import { PortaisModule } from 'src/app/portais/portais.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -15,7 +16,8 @@ import { LoginModule } from 'src/app/login/login.module';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    LoginModule
+    LoginModule,
+    PortaisModule
   ]
 })
 export class BaseLayoutModule { }

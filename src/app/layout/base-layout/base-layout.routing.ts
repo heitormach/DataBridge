@@ -1,4 +1,4 @@
-import { LoginFormComponent } from './../../login/login-form/login-form.component';
+import { PortaisFormComponent } from './../../portais/portais-form/portais-form.component';
 import { Routes } from '@angular/router';
 
 export const BaseLayoutRoutes: Routes = [
@@ -44,5 +44,6 @@ export const BaseLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: '', redirectTo: 'principal' }
+    { path: '', redirectTo: 'principal' },
+    { path: 'principal', component: PortaisFormComponent }
 ];
