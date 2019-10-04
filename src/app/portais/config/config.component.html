@@ -195,7 +195,8 @@
                 </div>
               </fieldset>
             </div>
-            <button [disabled]="!formulario.valid" class="pull-right" color="primary" mat-raised-button>Salvar
+            <button [disabled]="!formulario.valid" (click)="onSubmit()" class="pull-right" color="primary"
+              mat-raised-button>Salvar
               Credenciais</button>
           </div>
         </div>

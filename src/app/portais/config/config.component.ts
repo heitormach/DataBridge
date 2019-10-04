@@ -1,3 +1,5 @@
+import { ToastService } from './../../core/services/toast.service';
+import { ConfigService } from './../../core/services/config.service';
 import { FormValidation } from './../../form-default/form-validation';
 import { BaseFormComponent } from 'src/app/form-default/base-form/base-form.component';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +16,9 @@ export class ConfigComponent extends BaseFormComponent implements OnInit {
   config: IConfPortais;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private confService: ConfigService,
+    private toast: ToastService
   ) {
     super();
   }
@@ -58,9 +62,22 @@ export class ConfigComponent extends BaseFormComponent implements OnInit {
         senha: [null, Validators.required]
       })
     });
+
+    this.onRefresh();
   }
 
   onSubmit() {
+    this.confService.saveConfig(this.formulario.value).subscribe(sucesso => {
+      this.toast.showSuccess('Dados Salvos com Sucesso');
+    }, (error: any) => {
+      this.toast.showError(error.error);
+    });
+  }
+
+  onRefresh() {
+    this.confService.getConfig().subscribe(config => {
+      this.formulario.patchValue(config);
+    });
   }
 
 }

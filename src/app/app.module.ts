@@ -14,6 +14,7 @@ import { ModalModule, TooltipModule } from 'ngx-bootstrap';
 import { MatPaginatorIntl } from '@angular/material';
 import { PaginatorSettings } from './core/settings/paginator-settings';
 import { LoginModule } from './login/login.module';
+import { UserInterceptor } from './core/helpers/user.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginModule } from './login/login.module';
   ],
   providers: [
     { provide: MatPaginatorIntl, useClass: PaginatorSettings },
+    { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
     GlobalService
   ],
   bootstrap: [AppComponent]
