@@ -1,3 +1,5 @@
+import { HistoricoListComponent } from './../../portais/historico-list/historico-list.component';
+import { ConfigComponent } from './../../portais/config/config.component';
 import { PortaisFormComponent } from './../../portais/portais-form/portais-form.component';
 import { Routes } from '@angular/router';
 
@@ -44,6 +46,8 @@ export const BaseLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: '', redirectTo: 'principal' },
-    { path: 'principal', component: PortaisFormComponent }
+    { path: '', redirectTo: 'consulta' },
+    { path: 'consulta', component: PortaisFormComponent },
+    { path: 'configuracao', component: ConfigComponent },
+    { path: 'historico', component: HistoricoListComponent }
 ];

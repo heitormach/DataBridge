@@ -5,9 +5,11 @@ import { MaterialModule } from '../material/material.module';
 import { FormDefaultModule } from '../form-default/form-default.module';
 import { PortaisHtmlComponent } from './portais-html/portais-html.component';
 import { PortaisFormComponent } from './portais-form/portais-form.component';
+import { ConfigComponent } from './config/config.component';
+import { HistoricoListComponent } from './historico-list/historico-list.component';
 
 @NgModule({
-  declarations: [PortaisHtmlComponent, PortaisFormComponent],
+  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,7 +19,9 @@ import { PortaisFormComponent } from './portais-form/portais-form.component';
   ],
   exports: [
     PortaisHtmlComponent,
-    PortaisFormComponent
+    PortaisFormComponent,
+    ConfigComponent,
+    HistoricoListComponent
   ]
 })
 export class PortaisModule { }

@@ -50,4 +50,22 @@ export abstract class BaseFormComponent implements OnInit {
     });
   }
 
+  atLeastOneValidator = () => {
+    return (controlGroup) => {
+      const controls = controlGroup.controls;
+      if (controls) {
+        const theOne = Object.keys(controls).find(key => controls[key].value !== null &&
+          controls[key].value !== '' && controls[key].value !== false);
+        if (!theOne) {
+          return {
+            atLeastOneRequired: {
+              text: 'Pelo menos um campo deve ser preenchido'
+            }
+          };
+        }
+      }
+      return null;
+    };
+  }
+
 }

@@ -2,87 +2,75 @@
   <div class="row">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header card-header-tabs card-header-danger">
-          <div class="nav-tabs-navigation">
-            <div class="nav-tabs-wrapper">
-              <span class="nav-tabs-title">Dados Consulta:</span>
-              <ul class="nav nav-tabs" data-tabs="tabs">
-                <li class="nav-item">
-                  <a mat-button class="nav-link active" href="#gerais" data-toggle="tab">
-                    <i class="material-icons">data_usage</i>
-                    <div class="ripple-container"></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="card-header card-header-primary">
+          <h4 class="card-title mt-0">
+            <mat-icon>folder_shared</mat-icon> Dados para Consulta
+          </h4>
+          <p class="card-category"> Informe os dados que deseja consultar nos portais</p>
         </div>
         <div class="card-body">
-          <div class="tab-content">
-            <div class="tab-pane active" id="gerais">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field><input name="nome" (change)="changed($event)" formControlName="nome" matInput
-                      placeholder="Nome Completo"></mat-form-field>
-                  <app-error-msg [control]="formulario.get('nome')"></app-error-msg>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field><input name="cpf" (change)="changed($event)" formControlName="cpf" matInput
-                      placeholder="CPF">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('cpf')"></app-error-msg>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field><input name="rg" (change)="changed($event)" formControlName="rg" matInput
-                      placeholder="RG">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('rg')"></app-error-msg>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field><input name="nomeMae" (change)="changed($event)" formControlName="nomeMae" matInput
-                      placeholder="Nome da Mãe"></mat-form-field>
-                  <app-error-msg [control]="formulario.get('nomeMae')"></app-error-msg>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field><input name="razaoSocial" (change)="changed($event)" formControlName="razaoSocial"
-                      matInput placeholder="Razão Social">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('razaoSocial')"></app-error-msg>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field><input name="cnpj" (change)="changed($event)" formControlName="cnpj" matInput
-                      placeholder="CNPJ">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('cnpj')"></app-error-msg>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field><input name="numProcesso" (change)="changed($event)" formControlName="numProcesso"
-                      matInput placeholder="Número do Processo">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('numProcesso')"></app-error-msg>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field><input name="placaVeiculo" (change)="changed($event)" formControlName="placaVeiculo"
-                      matInput placeholder="Placa do Veículo">
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('placaVeiculo')"></app-error-msg>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <button [disabled]="consultando || !formulario.touched" (click)="consultar()" mat-raised-button
-                    class="btn btn-success pull-right">
-                    <a *ngIf="!consultando">Consultar</a>
-                    <mat-spinner *ngIf="consultando" [diameter]="20"></mat-spinner>
-                  </button>
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field><input name="nome" (change)="changed($event)" formControlName="nome" matInput
+                  placeholder="Nome Completo"></mat-form-field>
+              <app-error-msg [control]="formulario.get('nome')"></app-error-msg>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field><input name="cpf" (change)="changed($event)" formControlName="cpf" matInput
+                  placeholder="CPF">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('cpf')"></app-error-msg>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field><input name="rg" (change)="changed($event)" formControlName="rg" matInput
+                  placeholder="RG">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('rg')"></app-error-msg>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field><input name="placaVeiculo" (change)="changed($event)" formControlName="placaVeiculo"
+                  matInput placeholder="Placa do Veículo">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('placaVeiculo')"></app-error-msg>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field><input name="razaoSocial" (change)="changed($event)" formControlName="razaoSocial"
+                  matInput placeholder="Razão Social">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('razaoSocial')"></app-error-msg>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field><input name="cnpj" (change)="changed($event)" formControlName="cnpj" matInput
+                  placeholder="CNPJ">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('cnpj')"></app-error-msg>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field><input name="numProcesso" (change)="changed($event)" formControlName="numProcesso"
+                  matInput placeholder="Número do Processo">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('numProcesso')"></app-error-msg>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field><input name="matriculaSap" (change)="changed($event)" formControlName="matriculaSap"
+                  matInput placeholder="Matrícula Sap">
+              </mat-form-field>
+              <app-error-msg [control]="formulario.get('matriculaSap')"></app-error-msg>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button [disabled]="consultando || !formulario.valid" (click)="onSubmit()" mat-raised-button
+                class="btn btn-success pull-right">
+                <a *ngIf="!consultando">Consultar</a>
+                <mat-spinner *ngIf="consultando" [diameter]="20"></mat-spinner>
+              </button>
             </div>
           </div>
         </div>

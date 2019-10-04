@@ -1,3 +1,4 @@
+import { GlobalService } from './core/services/global.service';
 import { ComponentsModule } from './components/components.module';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
 import { MaterialModule } from './material/material.module';
@@ -33,7 +34,8 @@ import { LoginModule } from './login/login.module';
     TooltipModule.forRoot()
   ],
   providers: [
-    { provide: MatPaginatorIntl, useClass: PaginatorSettings }
+    { provide: MatPaginatorIntl, useClass: PaginatorSettings },
+    GlobalService
   ],
   bootstrap: [AppComponent]
 })

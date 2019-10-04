@@ -1,0 +1,190 @@
+<form [formGroup]="formulario">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-tabs card-header-success">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <span class="nav-tabs-title">Configuração de Portais</span>
+              <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="nav-item">
+                  <a mat-button class="nav-link active" href="#cadesp" data-toggle="tab">
+                    CADESP
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#caged" data-toggle="tab">
+                    CAGED
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#censec" data-toggle="tab">
+                    CENSEC
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#detran" data-toggle="tab">
+                    DETRAN
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#infocrim" data-toggle="tab">
+                    INFOCRIM
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#siel" data-toggle="tab">
+                    SIEL
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#sivec" data-toggle="tab">
+                    SIVEC
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="cadesp">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginCadesp" matInput placeholder="Usuário Cadesp">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginCadesp')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaCadesp" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaCadesp')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="caged">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginCaged" matInput placeholder="CPF Caged">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginCaged')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaCaged" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaCaged')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="censec">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginCensec" matInput placeholder="Usuário Censec">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginCensec')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaCensec" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaCensec')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="detran">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginDetran" matInput placeholder="CPF Detran">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginDetran')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaDetran" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaDetran')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="infocrim">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginInfoCrim" matInput placeholder="Usuário Infocrim">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginInfoCrim')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaInfoCrim" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaInfoCrim')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="siel">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginSiel" matInput placeholder="Usuário Siel">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginSiel')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaSiel" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaSiel')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="sivec">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input formControlName="loginSivec" matInput placeholder="Usuário Sivec">
+                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('loginSivec')"></app-error-msg>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field>
+                    <input type="password" formControlName="senhaSivec" matInput placeholder="Senha">
+                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                  </mat-form-field>
+                  <app-error-msg [control]="formulario.get('senhaSivec')"></app-error-msg>
+                </div>
+              </div>
+            </div>
+            <button [disabled]="!formulario.valid" class="pull-right" color="primary" mat-raised-button>Salvar Credenciais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -2,6 +2,7 @@ import { BaseFormComponent } from 'src/app/form-default/base-form/base-form.comp
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormValidation } from 'src/app/form-default/form-validation';
+import { ISearch } from 'src/app/core/models/search-portais.model';
 
 @Component({
   selector: 'app-portais-form',
@@ -50,10 +51,6 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
     'checkInfocrim'
   ];
 
-  portaisNomeMae = [
-    'checkSiel'
-  ];
-
   portaisMatricula = [
     'checkSivec'
   ];
@@ -65,6 +62,8 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
   consultando: boolean;
 
+  dadosConsulta: ISearch;
+
   constructor(
     private fb: FormBuilder
   ) {
@@ -75,10 +74,9 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
     this.formulario = this.fb.group({
       id: [null],
       nome: [null],
-      cpf: ['', [Validators.minLength(11), Validators.maxLength(11), FormValidation.validarCPFCNPJ]],
-      nomeMae: [null],
+      cpf: [null, [Validators.minLength(11), Validators.maxLength(11), FormValidation.validarCPFCNPJ]],
       rg: [null],
-      cnpj: ['', [Validators.minLength(14), Validators.maxLength(14), FormValidation.validarCPFCNPJ]],
+      cnpj: [null, [Validators.minLength(14), Validators.maxLength(14), FormValidation.validarCPFCNPJ]],
       razaoSocial: [null],
       numProcesso: [null],
       placaVeiculo: [null],
@@ -97,6 +95,7 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
     this.disableFields();
 
+    this.formulario.setValidators(this.atLeastOneValidator());
   }
 
   changed(event: any) {
@@ -126,13 +125,6 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
       });
     }
 
-    if (event.target.name === 'nomeMae') {
-      this.portaisNomeMae.forEach(portal => {
-        this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
-      });
-    }
-
     if (event.target.name === 'placaVeiculo') {
       if (this.formulario.get('cpf').value !== null && this.formulario.get('cpf').value !== '') {
         this.formulario.get('checkDetran').enable();
@@ -142,6 +134,13 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
     if (event.target.name === 'numProcesso') {
       this.portaisProcesso.forEach(portal => {
+        this.formulario.get(portal).enable();
+        this.formulario.get(portal).setValue(true);
+      });
+    }
+
+    if (event.target.name === 'matriculaSap') {
+      this.portaisMatricula.forEach(portal => {
         this.formulario.get(portal).enable();
         this.formulario.get(portal).setValue(true);
       });
@@ -167,6 +166,62 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
     this.disableFields();
 
     this.formulario.disable();
+  }
+
+  onSubmit() {
+
+    this.consultando = true;
+
+    this.dadosConsulta = {
+      nome: this.formulario.get('nome').value,
+      cpf: this.formulario.get('cpf').value,
+      cnpj: this.formulario.get('cnpj').value,
+      matriculaSap: this.formulario.get('matriculaSap').value,
+      numProcesso: this.formulario.get('numProcesso').value,
+      placaVeiculo: this.formulario.get('placaVeiculo').value,
+      razaoSocial: this.formulario.get('razaoSocial').value,
+      rg: this.formulario.get('rg').value,
+      portais: []
+    };
+
+    if (this.formulario.get('checkArpensp').value === true) {
+      this.dadosConsulta.portais.push(2);
+    }
+
+    if (this.formulario.get('checkCadesp').value === true) {
+      this.dadosConsulta.portais.push(3);
+    }
+
+    if (this.formulario.get('checkCaged').value === true) {
+      this.dadosConsulta.portais.push(4);
+    }
+
+    if (this.formulario.get('checkCensec').value === true) {
+      this.dadosConsulta.portais.push(5);
+    }
+
+    if (this.formulario.get('checkDetran').value === true) {
+      this.dadosConsulta.portais.push(6);
+    }
+
+    if (this.formulario.get('checkInfocrim').value === true) {
+      this.dadosConsulta.portais.push(7);
+    }
+
+    if (this.formulario.get('checkJucesp').value === true) {
+      this.dadosConsulta.portais.push(8);
+    }
+
+    if (this.formulario.get('checkSiel').value === true) {
+      this.dadosConsulta.portais.push(9);
+    }
+
+    if (this.formulario.get('checkSivec').value === true) {
+      this.dadosConsulta.portais.push(10);
+    }
+
+    console.log(JSON.stringify(this.dadosConsulta));
+
   }
 
 }
