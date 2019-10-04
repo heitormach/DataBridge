@@ -1,7 +1,8 @@
-import { FormValidation } from 'src/app/form-default/form-validation';
+import { FormValidation } from './../../form-default/form-validation';
 import { BaseFormComponent } from 'src/app/form-default/base-form/base-form.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { IConfPortais } from 'src/app/core/models/config-portais.model';
 
 @Component({
   selector: 'app-config',
@@ -9,6 +10,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./config.component.scss']
 })
 export class ConfigComponent extends BaseFormComponent implements OnInit {
+
+  config: IConfPortais;
 
   constructor(
     private fb: FormBuilder
@@ -18,29 +21,46 @@ export class ConfigComponent extends BaseFormComponent implements OnInit {
 
   ngOnInit() {
     this.formulario = this.fb.group({
-      loginCadesp: [null, Validators.required],
-      senhaCadesp: [null, Validators.required],
-      loginCaged: [null, [
-        Validators.required,
-        FormValidation.validarCPFCNPJ,
-        Validators.minLength(11),
-        Validators.maxLength(11)]],
-      senhaCaged: [null, Validators.required],
-      loginCensec: [null, Validators.required],
-      senhaCensec: [null, Validators.required],
-      loginDetran: [null, [
-        Validators.required,
-        FormValidation.validarCPFCNPJ,
-        Validators.minLength(11),
-        Validators.maxLength(11)]],
-      senhaDetran: [null, Validators.required],
-      loginInfoCrim: [null, Validators.required],
-      senhaInfoCrim: [null, Validators.required],
-      loginSiel: [null, [Validators.required, Validators.email]],
-      senhaSiel: [null, Validators.required],
-      loginSivec: [null, Validators.required],
-      senhaSivec: [null, Validators.required]
+      cadesp: this.fb.group({
+        login: [null, Validators.required],
+        senha: [null, Validators.required]
+      }),
+      caged: this.fb.group({
+        login: [null, [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+          FormValidation.validarCPFCNPJ]],
+        senha: [null, Validators.required]
+      }),
+      censec: this.fb.group({
+        login: [null, Validators.required],
+        senha: [null, Validators.required]
+      }),
+      detran: this.fb.group({
+        login: [null, [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+          FormValidation.validarCPFCNPJ]],
+        senha: [null, Validators.required]
+      }),
+      infocrim: this.fb.group({
+        login: [null, Validators.required],
+        senha: [null, Validators.required]
+      }),
+      siel: this.fb.group({
+        login: [null, Validators.required],
+        senha: [null, Validators.required]
+      }),
+      sivec: this.fb.group({
+        login: [null, Validators.required],
+        senha: [null, Validators.required]
+      })
     });
+  }
+
+  onSubmit() {
   }
 
 }

@@ -56,132 +56,147 @@
         <div class="card-body">
           <div class="tab-content">
             <div class="tab-pane active" id="cadesp">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginCadesp" matInput placeholder="Usuário Cadesp">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginCadesp')"></app-error-msg>
+              <fieldset formGroupName="cadesp">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="Usuário Cadesp">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('cadesp').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('cadesp').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaCadesp" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaCadesp')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="caged">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginCaged" matInput placeholder="CPF Caged">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginCaged')"></app-error-msg>
+              <fieldset formGroupName="caged">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="CPF Caged">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('caged').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('caged').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaCaged" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaCaged')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="censec">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginCensec" matInput placeholder="Usuário Censec">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginCensec')"></app-error-msg>
+              <fieldset formGroupName="censec">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="Usuário Censec">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('censec').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('censec').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaCensec" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaCensec')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="detran">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginDetran" matInput placeholder="CPF Detran">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginDetran')"></app-error-msg>
+              <fieldset formGroupName="detran">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="CPF Detran">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('detran').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('detran').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaDetran" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaDetran')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="infocrim">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginInfoCrim" matInput placeholder="Usuário Infocrim">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginInfoCrim')"></app-error-msg>
+              <fieldset formGroupName="infocrim">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="Usuário Infocrim">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('infocrim').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('infocrim').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaInfoCrim" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaInfoCrim')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="siel">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginSiel" matInput placeholder="Usuário Siel">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginSiel')"></app-error-msg>
+              <fieldset formGroupName="siel">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="Usuário Siel">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('siel').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('siel').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaSiel" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaSiel')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
             <div class="tab-pane" id="sivec">
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input formControlName="loginSivec" matInput placeholder="Usuário Sivec">
-                    <mat-icon color="primary" matSuffix>person_pin</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('loginSivec')"></app-error-msg>
+              <fieldset formGroupName="sivec">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input formControlName="login" matInput placeholder="Usuário Sivec">
+                      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('sivec').get('login')"></app-error-msg>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="password" formControlName="senha" matInput placeholder="Senha">
+                      <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
+                    </mat-form-field>
+                    <app-error-msg [control]="formulario.get('sivec').get('senha')"></app-error-msg>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <mat-form-field>
-                    <input type="password" formControlName="senhaSivec" matInput placeholder="Senha">
-                    <mat-icon color="primary" matSuffix>vpn_key</mat-icon>
-                  </mat-form-field>
-                  <app-error-msg [control]="formulario.get('senhaSivec')"></app-error-msg>
-                </div>
-              </div>
+              </fieldset>
             </div>
-            <button [disabled]="!formulario.valid" class="pull-right" color="primary" mat-raised-button>Salvar Credenciais</button>
+            <button [disabled]="!formulario.valid" class="pull-right" color="primary" mat-raised-button>Salvar
+              Credenciais</button>
           </div>
         </div>
       </div>

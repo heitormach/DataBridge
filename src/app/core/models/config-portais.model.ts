@@ -1,16 +1,30 @@
 export interface IConfPortais {
-    loginCadesp: string;
-    senhaCadesp: string;
-    loginCaged: string;
-    senhaCaged: string;
-    loginCensec: string;
-    senhaCensec: string;
-    loginDetran: string;
-    senhaDetran: string;
-    loginInfoCrim: string;
-    senhaInfoCrim: string;
-    loginSiel: string;
-    senhaSiel: string;
-    loginSivec: string;
-    senhaSivec: string;
+    cadesp: {
+        login: string;
+        senha: string;
+    };
+    caged: {
+        login: string;
+        senha: string;
+    };
+    censec: {
+        login: string;
+        senha: string;
+    };
+    detran: {
+        login: string;
+        senha: string;
+    };
+    infocrim: {
+        login: string;
+        senha: string;
+    };
+    siel: {
+        login: string;
+        senha: string;
+    };
+    sivec: {
+        login: string;
+        senha: string;
+    };
 }
