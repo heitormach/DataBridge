@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortaisHtmlComponent implements OnInit {
 
+  returned: boolean;
+
   constructor() { }
 
   ngOnInit() {

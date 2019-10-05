@@ -1,8 +1,10 @@
+import { PortaisService } from './../../core/services/portais.service';
 import { BaseFormComponent } from 'src/app/form-default/base-form/base-form.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormValidation } from 'src/app/form-default/form-validation';
 import { ISearch } from 'src/app/core/models/search-portais.model';
+import { RelatorioModel } from 'src/app/core/models/relatorio.model';
 
 @Component({
   selector: 'app-portais-form',
@@ -11,6 +13,7 @@ import { ISearch } from 'src/app/core/models/search-portais.model';
 })
 export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
+  @Output() relatorioPass: EventEmitter<RelatorioModel> = new EventEmitter();
   portais = [
     'checkArisp',
     'checkArpensp',
@@ -65,7 +68,8 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
   dadosConsulta: ISearch;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private portalServ: PortaisService
   ) {
     super();
   }
@@ -220,7 +224,10 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
       this.dadosConsulta.portais.push(10);
     }
 
-    console.log(JSON.stringify(this.dadosConsulta));
+    this.portalServ.doRelatorio(this.dadosConsulta).subscribe(relatorio => {
+      this.portalServ.relatorioRetornado.emit(relatorio);
+      this.portalServ.processed.emit();
+    });
 
   }
 

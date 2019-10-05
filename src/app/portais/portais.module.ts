@@ -7,9 +7,11 @@ import { PortaisHtmlComponent } from './portais-html/portais-html.component';
 import { PortaisFormComponent } from './portais-form/portais-form.component';
 import { ConfigComponent } from './config/config.component';
 import { HistoricoListComponent } from './historico-list/historico-list.component';
+import { PortaisResultadoRelatorioComponent } from './portais-resultado-relatorio/portais-resultado-relatorio.component';
+import { PortaisResultadoPrintComponent } from './portais-resultado-print/portais-resultado-print.component';
 
 @NgModule({
-  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent],
+  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent, PortaisResultadoRelatorioComponent, PortaisResultadoPrintComponent],
   imports: [
     CommonModule,
     FormsModule,

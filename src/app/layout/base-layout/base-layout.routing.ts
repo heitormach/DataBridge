@@ -2,6 +2,7 @@ import { HistoricoListComponent } from './../../portais/historico-list/historico
 import { ConfigComponent } from './../../portais/config/config.component';
 import { PortaisFormComponent } from './../../portais/portais-form/portais-form.component';
 import { Routes } from '@angular/router';
+import { PortaisResultadoRelatorioComponent } from 'src/app/portais/portais-resultado-relatorio/portais-resultado-relatorio.component';
 
 export const BaseLayoutRoutes: Routes = [
     // {
@@ -49,5 +50,6 @@ export const BaseLayoutRoutes: Routes = [
     { path: '', redirectTo: 'consulta' },
     { path: 'consulta', component: PortaisFormComponent },
     { path: 'configuracao', component: ConfigComponent },
-    { path: 'historico', component: HistoricoListComponent }
+    { path: 'historico', component: HistoricoListComponent },
+    { path: 'teste', component: PortaisResultadoRelatorioComponent }
 ];

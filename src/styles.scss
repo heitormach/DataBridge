@@ -8,3 +8,9 @@
     background: url(assets/img/gears.gif) center center no-repeat;
   }
 }
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+}

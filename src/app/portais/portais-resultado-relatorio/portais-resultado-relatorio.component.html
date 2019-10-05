@@ -1,0 +1,189 @@
+<ng-container class="noPrint">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-tabs card-header-dark">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <span class="nav-tabs-title">Relatório de Resultados</span>
+              <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="nav-item">
+                  <a mat-button class="nav-link active" href="#arisp" data-toggle="tab">
+                    ARISP
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#arpensp" data-toggle="tab">
+                    ARPENSP
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#cadesp" data-toggle="tab">
+                    CADESP
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#caged" data-toggle="tab">
+                    CAGED
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#censec" data-toggle="tab">
+                    CENSEC
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#detran" data-toggle="tab">
+                    DETRAN
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#infocrim" data-toggle="tab">
+                    INFOCRIM
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#jucesp" data-toggle="tab">
+                    JUCESP
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#siel" data-toggle="tab">
+                    SIEL
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a mat-button class="nav-link" href="#sivec" data-toggle="tab">
+                    SIVEC
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="arisp">
+              <!--<ng-container *ngFor="let arisp of relatorio.relatorio.arisp.dados">
+                <div class="row">
+                  <a>Cidade: {{arisp.cidade}}</a>
+                </div>
+                <div class="row">
+                  <a>Cartório: {{arisp.cartorio}}</a>
+                </div>
+                <div class="row">
+                  <a>Matrícula: {{arisp.matricula}}</a>
+                </div>
+                <hr>
+              </ng-container>-->
+            </div>
+            <div class="tab-pane" id="arpensp">
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Cartório: {{relatorio.relatorio.arpensp.cartorio}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>CNS: {{relatorio.relatorio.arpensp.cns}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Nome do Cônjuge 1: {{relatorio.relatorio.arpensp.conjuge1}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Nome do Cônjuge 2: {{relatorio.relatorio.arpensp.conjuge2}}</a>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <h5><b>Dados do Casamento</b></h5>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-2">
+                  <a>Matrícula: {{relatorio.relatorio.arpensp.dadosCasamento.matricula}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Nome do Cônjuge 1 após casamento:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Nome do Cônjuge 2 após casamento:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Data do Casamento:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Data de Entrada:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Data do Registro:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Acervo: {{relatorio.relatorio.arpensp.dadosCasamento.acervo}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Número do Livro:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.numLivro}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Número da Folha
+                    {{relatorio.relatorio.arpensp.dadosCasamento.numFolha}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Número do Registro
+                    {{relatorio.relatorio.arpensp.dadosCasamento.numRegistro}}</a>
+                </div>
+                <div class="col-md-6">
+                  <a>Tipo do Livro:
+                    {{relatorio.relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="cadesp">
+            </div>
+            <div class="tab-pane" id="caged">
+            </div>
+            <div class="tab-pane" id="censec">
+            </div>
+            <div class="tab-pane" id="detran">
+            </div>
+            <div class="tab-pane" id="infocrim">
+            </div>
+            <div class="tab-pane" id="jucesp">
+            </div>
+            <div class="tab-pane" id="siel">
+            </div>
+          </div>
+          <button class="pull-right" color="accent" mat-raised-button>Gerar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

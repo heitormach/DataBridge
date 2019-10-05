@@ -75,8 +75,8 @@ export class ConfigComponent extends BaseFormComponent implements OnInit {
   }
 
   onRefresh() {
-    this.confService.getConfig().subscribe(config => {
-      this.formulario.patchValue(config);
+    this.confService.getConfig().subscribe((config: any) => {
+      this.formulario.patchValue(config.configuracao_login);
     });
   }
 
