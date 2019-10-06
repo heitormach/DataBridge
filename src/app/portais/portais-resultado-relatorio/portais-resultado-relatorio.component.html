@@ -648,6 +648,92 @@
                     </div>
                   </div>
 
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Dados CNH</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Registro: {{relatorio.detran.cnh.registro}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Local: {{relatorio.detran.cnh.local}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Espelho PID: {{relatorio.detran.cnh.espelhoPID}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data de Emissão: {{relatorio.detran.cnh.emiCNH}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>PGU: {{relatorio.detran.cnh.pgu}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Categoria: {{relatorio.detran.cnh.categoria}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Primeira Habilitação: {{relatorio.detran.cnh.pHabil}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Status: {{relatorio.detran.cnh.status}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Espelho CNH: {{relatorio.detran.cnh.espelhoCNH}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Validade CNH: {{relatorio.detran.cnh.valCNH}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Pontuação: {{relatorio.detran.cnh.pontuacao}}</a>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Ocorrências</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <ng-container *ngFor="let ocorrencia of relatorio.detran.ocorrencias">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a>Data: {{ocorrencia.data}}</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a>Descricao: {{ocorrencia.descricao}}</a>
+                      </div>
+                    </div>
+                    <hr>
+
+                  </ng-container>
+
                 </ng-container>
 
                 <ng-container *ngIf="!relatorio.detran.dadosDaImgCnh">
