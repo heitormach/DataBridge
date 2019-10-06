@@ -74,99 +74,201 @@
         <div class="card-body">
           <div class="tab-content">
             <div class="tab-pane active" id="arisp">
-              <!--<ng-container *ngFor="let arisp of relatorio.relatorio.arisp.dados">
-                <div class="row">
-                  <a>Cidade: {{arisp.cidade}}</a>
-                </div>
-                <div class="row">
-                  <a>Cartório: {{arisp.cartorio}}</a>
-                </div>
-                <div class="row">
-                  <a>Matrícula: {{arisp.matricula}}</a>
-                </div>
-                <hr>
-              </ng-container>-->
+              <ng-container *ngIf="relatorio.arisp.dados">
+                <ng-container *ngFor="let arisp of relatorio.arisp.dados">
+                  <div class="row">
+                    <a>Cidade: {{arisp.cidade}}</a>
+                  </div>
+                  <div class="row">
+                    <a>Cartório: {{arisp.cartorio}}</a>
+                  </div>
+                  <div class="row">
+                    <a>Matrícula: {{arisp.matricula}}</a>
+                  </div>
+                  <hr>
+                </ng-container>
+              </ng-container>
             </div>
             <div class="tab-pane" id="arpensp">
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Cartório: {{relatorio.relatorio.arpensp.cartorio}}</a>
+              <ng-container *ngIf="relatorio.arpensp.cartorio">
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Cartório: {{relatorio.arpensp.cartorio}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>CNS: {{relatorio.arpensp.cns}}</a>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <a>CNS: {{relatorio.relatorio.arpensp.cns}}</a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Nome do Cônjuge 1: {{relatorio.arpensp.conjuge1}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Nome do Cônjuge 2: {{relatorio.arpensp.conjuge2}}</a>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Nome do Cônjuge 1: {{relatorio.relatorio.arpensp.conjuge1}}</a>
+                <hr>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h5><b>Dados do Casamento</b></h5>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <a>Nome do Cônjuge 2: {{relatorio.relatorio.arpensp.conjuge2}}</a>
+                <hr>
+                <div class="row">
+                  <div class="col-md-2">
+                    <a>Matrícula: {{relatorio.arpensp.dadosCasamento.matricula}}</a>
+                  </div>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-12">
-                  <h5><b>Dados do Casamento</b></h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Nome do Cônjuge 1 após casamento:
+                      {{relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Nome do Cônjuge 2 após casamento:
+                      {{relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
+                  </div>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <a>Matrícula: {{relatorio.relatorio.arpensp.dadosCasamento.matricula}}</a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Data do Casamento:
+                      {{relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Data de Entrada:
+                      {{relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Nome do Cônjuge 1 após casamento:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Data do Registro:
+                      {{relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Acervo: {{relatorio.arpensp.dadosCasamento.acervo}}</a>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <a>Nome do Cônjuge 2 após casamento:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Número do Livro:
+                      {{relatorio.arpensp.dadosCasamento.numLivro}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Número da Folha
+                      {{relatorio.arpensp.dadosCasamento.numFolha}}</a>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Data do Casamento:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Número do Registro
+                      {{relatorio.arpensp.dadosCasamento.numRegistro}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Tipo do Livro:
+                      {{relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <a>Data de Entrada:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Data do Registro:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
-                </div>
-                <div class="col-md-6">
-                  <a>Acervo: {{relatorio.relatorio.arpensp.dadosCasamento.acervo}}</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Número do Livro:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.numLivro}}</a>
-                </div>
-                <div class="col-md-6">
-                  <a>Número da Folha
-                    {{relatorio.relatorio.arpensp.dadosCasamento.numFolha}}</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <a>Número do Registro
-                    {{relatorio.relatorio.arpensp.dadosCasamento.numRegistro}}</a>
-                </div>
-                <div class="col-md-6">
-                  <a>Tipo do Livro:
-                    {{relatorio.relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
-                </div>
-              </div>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.arpensp.cartorio">
+                <a>{{ relatorio.arpensp }}</a>
+              </ng-container>
             </div>
-            <div class="tab-pane" id="cadesp">
+            <div class=" tab-pane" id="cadesp">
+              <ng-container *ngIf="relatorio.cadesp !== undefined && relatorio.cadesp !== null">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h5><b>Cabeçalho</b></h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Nome Empresa: {{relatorio.cadesp.cabecalho.nomeEmpresa}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>CNPJ: {{relatorio.cadesp.cabecalho.cnpj}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Inscrição Estadual: {{relatorio.cadesp.cabecalho.ie}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>DRT: {{relatorio.cadesp.cabecalho.drt}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Situação: {{relatorio.cadesp.cabecalho.situacao}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Data da Inscrição: {{relatorio.cadesp.cabecalho.dataInscricao}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Regime: {{relatorio.cadesp.cabecalho.regime}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Posto: {{relatorio.cadesp.cabecalho.posto}}</a>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h5><b>Dados Gerais</b></h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Nome Fantasia: {{relatorio.cadesp.geral.nomeFantasia}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>CNPJ: {{relatorio.cadesp.geral.cnpj}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Inscrição Estadual: {{relatorio.cadesp.geral.ie}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>NIRE: {{relatorio.cadesp.geral.nire}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Situação Cadastral: {{relatorio.cadesp.geral.sitCadastral}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Ocorrência Fiscal: {{relatorio.cadesp.geral.ocorrenciaFiscal}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Tipo Unidade: {{relatorio.cadesp.geral.tipoUnidade}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Data Inscrição Estado: {{relatorio.cadesp.geral.dtInscricaoEstado}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Data Início IE: {{relatorio.cadesp.geral.dtInicioIE}}</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a>Data Início Situação: {{relatorio.cadesp.geral.dtInicioSituacao}}</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <a>Forma de Atuação: {{relatorio.cadesp.geral.formasAtuacao}}</a>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="relatorio.cadesp === undefined || relatorio.cadesp === null">
+                <a>Dados não encontrados</a>
+              </ng-container>
             </div>
             <div class="tab-pane" id="caged">
             </div>

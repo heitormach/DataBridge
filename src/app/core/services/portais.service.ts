@@ -8,7 +8,7 @@ import { RelatorioModel } from '../models/relatorio.model';
 })
 export class PortaisService {
 
-  @Output() processed: EventEmitter<any> = new EventEmitter();
+  @Output() processed: EventEmitter<boolean> = new EventEmitter();
   @Output() relatorioRetornado: EventEmitter<RelatorioModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }

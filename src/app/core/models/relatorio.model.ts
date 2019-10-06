@@ -8,20 +8,14 @@ import { ArispModel } from './arisp.model';
 import { SielModel } from './siel.model';
 import { SivecModel } from './sivec.model';
 export interface RelatorioModel {
-    id?: string;
-    usuario?: string;
-    inicioBusca?: string;
-    fimBusca?: string;
-    relatorio?: {
-        arisp?: ArispModel;
-        arpensp?: ArpenspModel;
-        cadesp?: CadespModel;
-        caged?: CagedModel;
-        censec?: {};
-        detran?: DetranModel;
-        infocrim?: InfoCrimModel;
-        jucesp?: JucespModel;
-        siel?: SielModel;
-        sivec?: SivecModel;
-    };
+    arisp?: ArispModel;
+    arpensp?: ArpenspModel;
+    cadesp?: CadespModel;
+    caged?: CagedModel;
+    censec?: {};
+    detran?: DetranModel;
+    infocrim?: InfoCrimModel;
+    jucesp?: JucespModel;
+    siel?: SielModel;
+    sivec?: SivecModel;
 }

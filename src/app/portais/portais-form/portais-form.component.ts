@@ -176,6 +176,10 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
     this.consultando = true;
 
+    this.disableFields();
+
+    this.formulario.disable();
+
     this.dadosConsulta = {
       nome: this.formulario.get('nome').value,
       cpf: this.formulario.get('cpf').value,
@@ -187,6 +191,10 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
       rg: this.formulario.get('rg').value,
       portais: []
     };
+
+    if (this.formulario.get('checkArisp').value === true) {
+      this.dadosConsulta.portais.push(1);
+    }
 
     if (this.formulario.get('checkArpensp').value === true) {
       this.dadosConsulta.portais.push(2);
@@ -226,7 +234,6 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
     this.portalServ.doRelatorio(this.dadosConsulta).subscribe(relatorio => {
       this.portalServ.relatorioRetornado.emit(relatorio);
-      this.portalServ.processed.emit();
     });
 
   }

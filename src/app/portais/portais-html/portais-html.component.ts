@@ -1,4 +1,6 @@
+import { PortaisService } from './../../core/services/portais.service';
 import { Component, OnInit } from '@angular/core';
+import { RelatorioModel } from 'src/app/core/models/relatorio.model';
 
 @Component({
   selector: 'app-portais-html',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortaisHtmlComponent implements OnInit {
 
-  returned: boolean;
+  returned = false;
+  relatorio: RelatorioModel;
 
-  constructor() { }
+  constructor(
+    private portalServ: PortaisService
+  ) { }
 
   ngOnInit() {
+
+    this.portalServ.relatorioRetornado.subscribe(relatorio => {
+      this.returned = true;
+      this.relatorio = relatorio;
+    });
   }
 
 }
