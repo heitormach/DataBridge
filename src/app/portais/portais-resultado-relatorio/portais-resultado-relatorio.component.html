@@ -74,213 +74,598 @@
         <div class="card-body">
           <div class="tab-content">
             <div class="tab-pane active" id="arisp">
-              <ng-container *ngIf="relatorio.arisp.dados">
-                <ng-container *ngFor="let arisp of relatorio.arisp.dados">
-                  <div class="row">
-                    <a>Cidade: {{arisp.cidade}}</a>
-                  </div>
-                  <div class="row">
-                    <a>Cartório: {{arisp.cartorio}}</a>
-                  </div>
-                  <div class="row">
-                    <a>Matrícula: {{arisp.matricula}}</a>
-                  </div>
-                  <hr>
+
+              <ng-container *ngIf="relatorio.arisp">
+                <ng-container *ngIf="relatorio.arisp.dados">
+                  <ng-container *ngFor="let arisp of relatorio.arisp.dados">
+                    <div class="row">
+                      <a>Cidade: {{arisp.cidade}}</a>
+                    </div>
+                    <div class="row">
+                      <a>Cartório: {{arisp.cartorio}}</a>
+                    </div>
+                    <div class="row">
+                      <a>Matrícula: {{arisp.matricula}}</a>
+                    </div>
+                    <hr>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="!relatorio.arisp.dados">
+                  <a>{{relatorio.arisp}}</a>
                 </ng-container>
               </ng-container>
-            </div>
-            <div class="tab-pane" id="arpensp">
-              <ng-container *ngIf="relatorio.arpensp.cartorio">
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Cartório: {{relatorio.arpensp.cartorio}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>CNS: {{relatorio.arpensp.cns}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Nome do Cônjuge 1: {{relatorio.arpensp.conjuge1}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Nome do Cônjuge 2: {{relatorio.arpensp.conjuge2}}</a>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5><b>Dados do Casamento</b></h5>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-2">
-                    <a>Matrícula: {{relatorio.arpensp.dadosCasamento.matricula}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Nome do Cônjuge 1 após casamento:
-                      {{relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Nome do Cônjuge 2 após casamento:
-                      {{relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Data do Casamento:
-                      {{relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Data de Entrada:
-                      {{relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Data do Registro:
-                      {{relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Acervo: {{relatorio.arpensp.dadosCasamento.acervo}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Número do Livro:
-                      {{relatorio.arpensp.dadosCasamento.numLivro}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Número da Folha
-                      {{relatorio.arpensp.dadosCasamento.numFolha}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Número do Registro
-                      {{relatorio.arpensp.dadosCasamento.numRegistro}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Tipo do Livro:
-                      {{relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
-                  </div>
-                </div>
+
+              <ng-container *ngIf="!relatorio.arisp">
+                <a>Dados não solicitados.</a>
               </ng-container>
-              <ng-container *ngIf="!relatorio.arpensp.cartorio">
-                <a>{{ relatorio.arpensp }}</a>
+
+            </div>
+
+            <div class="tab-pane" id="arpensp">
+
+              <ng-container *ngIf="relatorio.arpensp">
+                <ng-container *ngIf="relatorio.arpensp.cartorio">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Cartório: {{relatorio.arpensp.cartorio}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>CNS: {{relatorio.arpensp.cns}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome do Cônjuge 1: {{relatorio.arpensp.conjuge1}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nome do Cônjuge 2: {{relatorio.arpensp.conjuge2}}</a>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Dados do Casamento</b></h5>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <a>Matrícula: {{relatorio.arpensp.dadosCasamento.matricula}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome do Cônjuge 1 após casamento:
+                        {{relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nome do Cônjuge 2 após casamento:
+                        {{relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Data do Casamento:
+                        {{relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data de Entrada:
+                        {{relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Data do Registro:
+                        {{relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Acervo: {{relatorio.arpensp.dadosCasamento.acervo}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Número do Livro:
+                        {{relatorio.arpensp.dadosCasamento.numLivro}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Número da Folha
+                        {{relatorio.arpensp.dadosCasamento.numFolha}}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Número do Registro
+                        {{relatorio.arpensp.dadosCasamento.numRegistro}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Tipo do Livro:
+                        {{relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="!relatorio.arpensp.cartorio">
+                  {{relatorio.arpensp}}
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.arpensp">
+                <a>Dados não solicitados</a>
               </ng-container>
             </div>
             <div class=" tab-pane" id="cadesp">
-              <ng-container *ngIf="relatorio.cadesp !== undefined && relatorio.cadesp !== null">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5><b>Cabeçalho</b></h5>
+              <ng-container *ngIf="relatorio.cadesp">
+                <ng-container *ngIf="relatorio.cadesp.cabecalho">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Cabeçalho</b></h5>
+                    </div>
                   </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Nome Empresa: {{relatorio.cadesp.cabecalho.nomeEmpresa}}</a>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome Empresa: {{relatorio.cadesp.cabecalho.nomeEmpresa}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>CNPJ: {{relatorio.cadesp.cabecalho.cnpj}}</a>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a>CNPJ: {{relatorio.cadesp.cabecalho.cnpj}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Inscrição Estadual: {{relatorio.cadesp.cabecalho.ie}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>DRT: {{relatorio.cadesp.cabecalho.drt}}</a>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Inscrição Estadual: {{relatorio.cadesp.cabecalho.ie}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Situação: {{relatorio.cadesp.cabecalho.situacao}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data da Inscrição: {{relatorio.cadesp.cabecalho.dataInscricao}}</a>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a>DRT: {{relatorio.cadesp.cabecalho.drt}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Regime: {{relatorio.cadesp.cabecalho.regime}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Posto: {{relatorio.cadesp.cabecalho.posto}}</a>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Situação: {{relatorio.cadesp.cabecalho.situacao}}</a>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Dados Gerais</b></h5>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a>Data da Inscrição: {{relatorio.cadesp.cabecalho.dataInscricao}}</a>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome Fantasia: {{relatorio.cadesp.geral.nomeFantasia}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>CNPJ: {{relatorio.cadesp.geral.cnpj}}</a>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Regime: {{relatorio.cadesp.cabecalho.regime}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Inscrição Estadual: {{relatorio.cadesp.geral.ie}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>NIRE: {{relatorio.cadesp.geral.nire}}</a>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a>Posto: {{relatorio.cadesp.cabecalho.posto}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Situação Cadastral: {{relatorio.cadesp.geral.sitCadastral}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Ocorrência Fiscal: {{relatorio.cadesp.geral.ocorrenciaFiscal}}</a>
+                    </div>
                   </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5><b>Dados Gerais</b></h5>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Tipo Unidade: {{relatorio.cadesp.geral.tipoUnidade}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data Inscrição Estado: {{relatorio.cadesp.geral.dtInscricaoEstado}}</a>
+                    </div>
                   </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Nome Fantasia: {{relatorio.cadesp.geral.nomeFantasia}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Data Início IE: {{relatorio.cadesp.geral.dtInicioIE}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data Início Situação: {{relatorio.cadesp.geral.dtInicioSituacao}}</a>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a>CNPJ: {{relatorio.cadesp.geral.cnpj}}</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Forma de Atuação: {{relatorio.cadesp.geral.formasAtuacao}}</a>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Inscrição Estadual: {{relatorio.cadesp.geral.ie}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>NIRE: {{relatorio.cadesp.geral.nire}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Situação Cadastral: {{relatorio.cadesp.geral.sitCadastral}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Ocorrência Fiscal: {{relatorio.cadesp.geral.ocorrenciaFiscal}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Tipo Unidade: {{relatorio.cadesp.geral.tipoUnidade}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Data Inscrição Estado: {{relatorio.cadesp.geral.dtInscricaoEstado}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Data Início IE: {{relatorio.cadesp.geral.dtInicioIE}}</a>
-                  </div>
-                  <div class="col-md-6">
-                    <a>Data Início Situação: {{relatorio.cadesp.geral.dtInicioSituacao}}</a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <a>Forma de Atuação: {{relatorio.cadesp.geral.formasAtuacao}}</a>
-                  </div>
-                </div>
+                </ng-container>
+                <ng-container *ngIf="!relatorio.cadesp.cabecalho">
+                  {{relatorio.cadesp}}
+                </ng-container>
               </ng-container>
-              <ng-container *ngIf="relatorio.cadesp === undefined || relatorio.cadesp === null">
-                <a>Dados não encontrados</a>
+              <ng-container *ngIf="!relatorio.cadesp">
+                <a>Dados não solicitados</a>
               </ng-container>
             </div>
             <div class="tab-pane" id="caged">
+              <ng-container *ngIf="relatorio.caged">
+
+                <ng-container *ngIf="relatorio.caged.autorizado_responsavel">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Autorizado Responsável</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CNPJ: {{relatorio.caged.autorizado_responsavel.cnpj_cpf_cei}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Razão Social: {{relatorio.caged.autorizado_responsavel.razao_social}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Logradouro: {{relatorio.caged.autorizado_responsavel.logradouro}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Bairro: {{relatorio.caged.autorizado_responsavel.bairro}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Município: {{relatorio.caged.autorizado_responsavel.municipio}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Estado: {{relatorio.caged.autorizado_responsavel.uf}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CEP: {{relatorio.caged.autorizado_responsavel.cep}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nome: {{relatorio.caged.autorizado_responsavel.razao_social}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CPF: {{relatorio.caged.autorizado_responsavel.cpf}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Telefone: {{relatorio.caged.autorizado_responsavel.telefone}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Ramal: {{relatorio.caged.autorizado_responsavel.ramal}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Email: {{relatorio.caged.autorizado_responsavel.email}}</a>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Empresa</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CNAE: {{relatorio.caged.empresa.atividade_economica_cnae}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Número de Filiais: {{relatorio.caged.empresa.totais.numero_filiais}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Admissões: {{relatorio.caged.empresa.totais.admissoes}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Variação Absoluta: {{relatorio.caged.empresa.totais.variacao_absoluta}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Total de Vínculos: {{relatorio.caged.empresa.totais.total_vinculos}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Desligamentos: {{relatorio.caged.empresa.totais.desligamentos}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Primeiro Dia: {{relatorio.caged.empresa.totais.primeiro_dia}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Último Dia: {{relatorio.caged.empresa.totais.ultimo_dia}}</a>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Dados do Trabalhador</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome: {{relatorio.caged.trabalhador.nome}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>PIS Base: {{relatorio.caged.trabalhador.pis_base}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CPF: {{relatorio.caged.trabalhador.cpf}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>CTPS: {{relatorio.caged.trabalhador.ctps}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Situação PIS: {{relatorio.caged.trabalhador.situacao_pis}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nacionalidade: {{relatorio.caged.trabalhador.nacionalidade}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Grau de Instrução: {{relatorio.caged.trabalhador.grau_de_instrucao}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Pessoa Com Deficiência: {{relatorio.caged.trabalhador.pcd}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Data de Nascimento: {{relatorio.caged.trabalhador.data_nascimento}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Sexo: {{relatorio.caged.trabalhador.sexo}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Raça: {{relatorio.caged.trabalhador.raca}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Tempo de Trabalho CAGED: {{relatorio.caged.trabalhador.tempo_trabalho.caged}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Tempo de Trabalho Rais: {{relatorio.caged.trabalhador.tempo_trabalho.rais}}</a>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><b>Vínculos do Trabalhador</b></h5>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <ng-container *ngFor="let vinculo of relatorio.caged.trabalhador.vinculos_trabalhador">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <a>Fonte: {{vinculo.fonte}}</a>
+                      </div>
+                      <div class="col-md-6">
+                        <a>Razão Social: {{vinculo.razao_social}}</a>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <a>CNPJ: {{vinculo.cnpj}}</a>
+                      </div>
+                      <div class="col-md-6">
+                        <a>CEI: {{vinculo.cei}}</a>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <a>Data de Entrada: {{vinculo.entrada}}</a>
+                      </div>
+                      <div class="col-md-6">
+                        <a>Data de Saída: {{vinculo.saida}}</a>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <a>Situação: {{vinculo.situacao}}</a>
+                      </div>
+                    </div>
+                    <hr>
+                  </ng-container>
+
+                </ng-container>
+
+                <ng-container *ngIf="!relatorio.caged.autorizado_responsavel">
+                  <a>{{ relatorio.caged }}</a>
+                </ng-container>
+
+              </ng-container>
+
+              <ng-container *ngIf="!relatorio.caged">
+                <a>Dados não solicitados</a>
+              </ng-container>
+
             </div>
+
             <div class="tab-pane" id="censec">
             </div>
             <div class="tab-pane" id="detran">
+              <ng-container *ngIf="relatorio.detran">
+                <ng-container *ngIf="relatorio.detran.dadosDaImgCnh">
+                  <div class="row" style="text-align: center">
+                    <div class="col-md-12">
+                      <img [src]="exibirFoto()">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome do Condutor: {{relatorio.detran.dadosDaImgCnh.nomeCondutor}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nome do Pai: {{relatorio.detran.dadosDaImgCnh.nomePai}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Nome da Mãe: {{relatorio.detran.dadosDaImgCnh.nomeMae}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Data de Nascimento: {{relatorio.detran.dadosDaImgCnh.nascimento}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CPF: {{relatorio.detran.dadosDaImgCnh.cpf}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Identidade: {{relatorio.detran.dadosDaImgCnh.identidade}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Tipográfico: {{relatorio.detran.dadosDaImgCnh.tipografico}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Registro: {{relatorio.detran.dadosDaImgCnh.registro}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>RENACH: {{relatorio.detran.dadosDaImgCnh.renach}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Categoria: {{relatorio.detran.dadosDaImgCnh.categoria}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Data de Emissão: {{relatorio.detran.dadosDaImgCnh.emissao}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Nacionalidade: {{relatorio.detran.condutor.nacionalidade}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>RNE: {{relatorio.detran.condutor.rne}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Validade RNE: {{relatorio.detran.condutor.valRNE}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>RG: {{relatorio.detran.condutor.rg}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Orgão Expedidor: {{relatorio.detran.condutor.orgaoEx}}</a>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>CPF: {{relatorio.detran.condutor.CPF}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>Sexo: {{relatorio.detran.condutor.sexo}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Município: {{relatorio.detran.condutor.municipio}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>UF: {{relatorio.detran.condutor.UF}}</a>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a>Natural De: {{relatorio.detran.condutor.natural}}</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a>País: {{relatorio.detran.condutor.pais}}</a>
+                    </div>
+                  </div>
+
+                </ng-container>
+
+                <ng-container *ngIf="!relatorio.detran.dadosDaImgCnh">
+                  <a>{{relatorio.detran}}</a>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.detran">
+                <a>Dados não solicitados</a>
+              </ng-container>
+
             </div>
             <div class="tab-pane" id="infocrim">
             </div>
             <div class="tab-pane" id="jucesp">
             </div>
             <div class="tab-pane" id="siel">
+            </div>
+            <div class="tab-pane" id="sivec">
             </div>
           </div>
           <button class="pull-right" color="accent" mat-raised-button>Gerar PDF</button>
