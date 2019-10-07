@@ -1,0 +1,95 @@
+<ng-container *ngIf="relatorio.cadesp.cabecalho">
+  <div class="row">
+    <div class="col-md-12">
+      <h5><b>Cabeçalho</b></h5>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Nome Empresa: {{relatorio.cadesp.cabecalho.nomeEmpresa}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>CNPJ: {{relatorio.cadesp.cabecalho.cnpj}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Inscrição Estadual: {{relatorio.cadesp.cabecalho.ie}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>DRT: {{relatorio.cadesp.cabecalho.drt}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Situação: {{relatorio.cadesp.cabecalho.situacao}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Data da Inscrição: {{relatorio.cadesp.cabecalho.dataInscricao}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Regime: {{relatorio.cadesp.cabecalho.regime}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Posto: {{relatorio.cadesp.cabecalho.posto}}</a>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h5><b>Dados Gerais</b></h5>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Nome Fantasia: {{relatorio.cadesp.geral.nomeFantasia}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>CNPJ: {{relatorio.cadesp.geral.cnpj}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Inscrição Estadual: {{relatorio.cadesp.geral.ie}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>NIRE: {{relatorio.cadesp.geral.nire}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Situação Cadastral: {{relatorio.cadesp.geral.sitCadastral}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Ocorrência Fiscal: {{relatorio.cadesp.geral.ocorrenciaFiscal}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Tipo Unidade: {{relatorio.cadesp.geral.tipoUnidade}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Data Inscrição Estado: {{relatorio.cadesp.geral.dtInscricaoEstado}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Data Início IE: {{relatorio.cadesp.geral.dtInicioIE}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Data Início Situação: {{relatorio.cadesp.geral.dtInicioSituacao}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Forma de Atuação: {{relatorio.cadesp.geral.formasAtuacao}}</a>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="!relatorio.cadesp.cabecalho">
+  {{relatorio.cadesp}}
+</ng-container>

@@ -1,0 +1,83 @@
+<ng-container *ngIf="relatorio.arpensp.cartorio">
+  <div class="row">
+    <div class="col-md-6">
+      <a>Cartório: {{relatorio.arpensp.cartorio}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>CNS: {{relatorio.arpensp.cns}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Nome do Cônjuge 1: {{relatorio.arpensp.conjuge1}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Nome do Cônjuge 2: {{relatorio.arpensp.conjuge2}}</a>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h5><b>Dados do Casamento</b></h5>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-2">
+      <a>Matrícula: {{relatorio.arpensp.dadosCasamento.matricula}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Nome do Cônjuge 1 após casamento:
+        {{relatorio.arpensp.dadosCasamento.conjuge1Casamento}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Nome do Cônjuge 2 após casamento:
+        {{relatorio.arpensp.dadosCasamento.conjuge2Casamento}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Data do Casamento:
+        {{relatorio.arpensp.dadosCasamento.dataCasamento}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Data de Entrada:
+        {{relatorio.arpensp.dadosCasamento.dataEntrada}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Data do Registro:
+        {{relatorio.arpensp.dadosCasamento.dataRegistro}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Acervo: {{relatorio.arpensp.dadosCasamento.acervo}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Número do Livro:
+        {{relatorio.arpensp.dadosCasamento.numLivro}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Número da Folha
+        {{relatorio.arpensp.dadosCasamento.numFolha}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a>Número do Registro
+        {{relatorio.arpensp.dadosCasamento.numRegistro}}</a>
+    </div>
+    <div class="col-md-6">
+      <a>Tipo do Livro:
+        {{relatorio.arpensp.dadosCasamento.tipoLivro}}</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!relatorio.arpensp.cartorio">
+  {{relatorio.arpensp}}
+</ng-container>
