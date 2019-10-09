@@ -78,6 +78,16 @@
       <a><b>UF:</b> {{relatorio.jucesp.endereco.uf}}</a>
     </div>
   </div>
+
+  <ng-container *ngIf="relatorio.jucesp.arquivo">
+    <div class="row noPrint">
+      <div class="col-md-12">
+        <button (click)="downloadPDF(relatorio)" mat-raised-button color="warn">jucesp.pdf</button>
+      </div>
+      <br>
+      <br>
+    </div>
+  </ng-container>
 </ng-container>
 
 <ng-container *ngIf="relatorio.jucesp.erro">

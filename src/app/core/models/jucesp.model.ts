@@ -17,4 +17,5 @@ export interface JucespModel {
         uf: string;
     };
     erro?: string;
+    arquivo?: string;
 }
