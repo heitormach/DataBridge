@@ -1,4 +1,4 @@
-<ng-container class="noPrint">
+<div class="noPrint">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -129,20 +129,245 @@
               <ng-container *ngIf="!relatorio.detran">
                 <a>Dados não solicitados</a>
               </ng-container>
+            </div>
 
-            </div>
             <div class="tab-pane" id="infocrim">
+              <ng-container *ngIf="relatorio.infocrim">
+                <app-infocrim></app-infocrim>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.infocrim">
+                <a>Dados não solicitados</a>
+              </ng-container>
             </div>
+
             <div class="tab-pane" id="jucesp">
+              <ng-container *ngIf="relatorio.jucesp">
+                <app-jucesp [relatorio]="relatorio"></app-jucesp>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.jucesp">
+                <a>Dados não solicitados</a>
+              </ng-container>
             </div>
+
             <div class="tab-pane" id="siel">
+              <ng-container *ngIf="relatorio.siel">
+                <app-siel [relatorio]="relatorio"></app-siel>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.siel">
+                <a>Dados não solicitados</a>
+              </ng-container>
             </div>
+
             <div class="tab-pane" id="sivec">
+              <ng-container *ngIf="relatorio.sivec">
+                <app-sivec [relatorio]="relatorio"></app-sivec>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.sivec">
+                <a>Dados não solicitados</a>
+              </ng-container>
             </div>
           </div>
-          <button class="pull-right" color="accent" mat-raised-button>Gerar PDF</button>
+          <button class="pull-left" (click)="emitEvento()" color="primary" mat-raised-button>Voltar</button>
+          <button class="pull-right" (click)="print('printable')" color="accent" mat-raised-button>Gerar PDF</button>
         </div>
       </div>
     </div>
   </div>
-</ng-container>
+</div>
+
+<div id="printable" class="showPrint">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            ARISP
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.arisp">
+            <app-arisp [relatorio]="relatorio"></app-arisp>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.arisp">
+            <a>Dados não solicitados.</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            ARPENSP
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.arpensp">
+            <app-arpensp [relatorio]="relatorio"></app-arpensp>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.arpensp">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            CADESP
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.cadesp">
+            <app-cadesp [relatorio]="relatorio"></app-cadesp>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.cadesp">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            CAGED
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.caged">
+            <app-caged [relatorio]="relatorio"></app-caged>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.caged">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            CENSEC
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="tab-pane" id="censec">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            DETRAN
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.detran">
+            <app-detran [relatorio]="relatorio"></app-detran>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.detran">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            INFOCRIM
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.infocrim">
+          </ng-container>
+          <ng-container *ngIf="!relatorio.infocrim">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            JUCESP
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.jucesp">
+            <app-jucesp [relatorio]="relatorio"></app-jucesp>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.jucesp">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            SIEL
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.siel">
+            <app-siel [relatorio]="relatorio"></app-siel>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.siel">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-dark">
+          <h4 class="card-title mt-0">
+            SIVEC
+          </h4>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="relatorio.sivec">
+            <app-sivec [relatorio]="relatorio"></app-sivec>
+          </ng-container>
+          <ng-container *ngIf="!relatorio.sivec">
+            <a>Dados não solicitados</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<ng-container *ngIf="relatorio.sivec.geral">
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome:</b> {{relatorio.sivec.geral.nome}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data Nascimento:</b> {{relatorio.sivec.geral.dataNascimento}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Número VEC:</b> {{relatorio.sivec.geral.numeroControleVEC}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Sexo:</b> {{relatorio.sivec.geral.sexo}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>RG:</b> {{relatorio.sivec.geral.rg}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Tipo RG:</b> {{relatorio.sivec.geral.tipoRG}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data Emissão RG:</b> {{relatorio.sivec.geral.dataEmissaoRG}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Estado Civil:</b> {{relatorio.sivec.geral.estadoCivil}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Naturalizado:</b> {{relatorio.sivec.geral.naturalizadoSN}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Grau de Instrução:</b> {{relatorio.sivec.geral.grauInstrucao}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome do Pai:</b> {{relatorio.sivec.geral.nomePai}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Nome da Mãe:</b> {{relatorio.sivec.geral.nomeMae}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Cor da Pele:</b> {{relatorio.sivec.geral.corPele}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Alcunha:</b> {{relatorio.sivec.geral.alcunha}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Naturalidade:</b> {{relatorio.sivec.geral.naturalidade}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Posto Identificação:</b> {{relatorio.sivec.geral.postoIdentificacao}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Formula Fundamental:</b> {{relatorio.sivec.geral.formulaFundamental}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Cor dos Olhos:</b> {{relatorio.sivec.geral.corOlhos}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Cabelos:</b> {{relatorio.sivec.geral.cabelo}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Profissão:</b> {{relatorio.sivec.geral.profissao}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Endereço Residencial:</b> {{relatorio.sivec.geral.residencial}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Trabalho:</b> {{relatorio.sivec.geral.trabalho}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome Adicional:</b> {{relatorio.sivec.geral.nomeAdicional}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>RG Adicional:</b> {{relatorio.sivec.geral.rgAdicional}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data Nascimento Adicional:</b> {{relatorio.sivec.geral.dataNascimentoAdicional}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Naturalidade Adicional:</b> {{relatorio.sivec.geral.naturalidadeAdicional}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <a><b>Nome do Pai Adicional:</b> {{relatorio.sivec.geral.nomePaiAdicional}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <a><b>Nome da Mãe Adicional:</b> {{relatorio.sivec.geral.nomeMaeAdicional}}</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="relatorio.sivec.erro">
+  {{relatorio.sivec.erro}}
+</ng-container>

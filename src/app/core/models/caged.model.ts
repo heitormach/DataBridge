@@ -53,4 +53,5 @@ export interface CagedModel {
             }
         ]
     };
+    erro?: string;
 }

@@ -1,3 +1,4 @@
 <app-portais-form *ngIf="returned === false"></app-portais-form>
 
-<app-portais-resultado-relatorio [relatorio]="relatorio" *ngIf="returned === true"></app-portais-resultado-relatorio>
+<app-portais-resultado-relatorio (evento)="returned = false" [relatorio]="relatorio" *ngIf="returned === true">
+</app-portais-resultado-relatorio>

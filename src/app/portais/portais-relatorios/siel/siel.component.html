@@ -1,0 +1,60 @@
+<ng-container *ngIf="relatorio.siel.geral">
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome:</b> {{relatorio.siel.geral.nome}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Nº do Título :</b> {{relatorio.siel.geral.titulo}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data de Nascimento:</b> {{relatorio.siel.geral.dataNasc}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Zona :</b> {{relatorio.siel.geral.zona}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Endereço:</b> {{relatorio.siel.geral.endereco}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Município :</b> {{relatorio.siel.geral.municipio}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>UF:</b> {{relatorio.siel.geral.uf}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data Domicílio :</b> {{relatorio.siel.geral.dataDomicilio}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome do Pai:</b> {{relatorio.siel.geral.nomePai}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Nome da Mãe :</b> {{relatorio.siel.geral.nomeMae}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Naturalidade:</b> {{relatorio.siel.geral.naturalidade}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Código de Validação :</b> {{relatorio.siel.geral.codValidacao}}</a>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="relatorio.siel.erro">
+  {{relatorio.siel.erro}}
+</ng-container>

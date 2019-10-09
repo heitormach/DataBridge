@@ -135,4 +135,5 @@ export interface InfoCrimModel {
             histórico: string;
         }
     };
+    erro?: string;
 }

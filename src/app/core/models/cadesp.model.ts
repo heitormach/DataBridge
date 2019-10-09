@@ -22,4 +22,5 @@ export interface CadespModel {
         dtInicioSituacao: string;
         formasAtuacao: string;
     };
+    erro?: string;
 }

@@ -2,23 +2,23 @@
   <ng-container *ngFor="let arisp of relatorio.arisp.dados">
     <div class="row">
       <div class="col-md-12">
-        <a>Cidade: {{arisp.cidade}}</a>
+        <a><b>Cidade:</b> {{arisp.cidade}}</a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <a>Cartório: {{arisp.cartorio}}</a>
+        <a><b>Cartório:</b> {{arisp.cartorio}}</a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <a>Matrícula: {{arisp.matricula}}</a>
+        <a><b>Matrícula:</b> {{arisp.matricula}}</a>
       </div>
     </div>
     <hr>
   </ng-container>
 </ng-container>
 
-<ng-container *ngIf="!relatorio.arisp.dados">
-  <a>{{relatorio.arisp}}</a>
+<ng-container *ngIf="relatorio.arisp.erro">
+  <a>{{relatorio.arisp.erro}}</a>
 </ng-container>

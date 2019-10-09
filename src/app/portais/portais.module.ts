@@ -14,9 +14,14 @@ import { ArpenspComponent } from './portais-relatorios/arpensp/arpensp.component
 import { CadespComponent } from './portais-relatorios/cadesp/cadesp.component';
 import { CagedComponent } from './portais-relatorios/caged/caged.component';
 import { DetranComponent } from './portais-relatorios/detran/detran.component';
+import { InfocrimComponent } from './portais-relatorios/infocrim/infocrim.component';
+import { JucespComponent } from './portais-relatorios/jucesp/jucesp.component';
+import { SielComponent } from './portais-relatorios/siel/siel.component';
+import { SivecComponent } from './portais-relatorios/sivec/sivec.component';
+import { HistoricoHtmlComponent } from './historico-html/historico-html.component';
 
 @NgModule({
-  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent, PortaisResultadoRelatorioComponent, PortaisResultadoPrintComponent, ArispComponent, ArpenspComponent, CadespComponent, CagedComponent, DetranComponent],
+  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent, PortaisResultadoRelatorioComponent, PortaisResultadoPrintComponent, ArispComponent, ArpenspComponent, CadespComponent, CagedComponent, DetranComponent, InfocrimComponent, JucespComponent, SielComponent, SivecComponent, HistoricoHtmlComponent],
   imports: [
     CommonModule,
     FormsModule,

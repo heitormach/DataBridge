@@ -15,12 +15,15 @@ export class UserInterceptor implements HttpInterceptor {
         // add authorization header with jwt token if available
         // JSON.stringify(token[0].jwt))
         // let jwt = JSON.stringify(currentUser[0].jwt).replace('"','').replace('"','')
-        request = request.clone({
-            setHeaders: {
-                usuario: `${this.global.usuario.login}`
-            }
-        });
-
+        if (!request.url.endsWith('/api/relatorio/v1/consulta_status_relatorio')) {
+            request = request.clone({
+                setHeaders: {
+                    usuario: `${this.global.usuario.login}`
+                }
+            });
+        } else {
+            console.log(request);
+        }
         return next.handle(request);
     }
 }

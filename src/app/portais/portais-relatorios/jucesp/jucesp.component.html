@@ -1,0 +1,85 @@
+<ng-container *ngIf="relatorio.jucesp.nomeEmpresa">
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Nome Empresa: </b> {{relatorio.jucesp.nomeEmpresa}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Tipo:</b> {{relatorio.jucesp.tipoEmpresa}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data Constituição: </b> {{relatorio.jucesp.dataConstituicao}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data Início Atividade:</b> {{relatorio.jucesp.dtIniAtiv}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>CNPJ:</b> {{relatorio.jucesp.cnpj}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Inscrição Estadual:</b> {{relatorio.jucesp.ie}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <a><b>Objeto:</b> {{relatorio.jucesp.objeto}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <a><b>Capital:</b> {{relatorio.jucesp.capital}}</a>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h5>Endereço</h5>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Logradouro:</b> {{relatorio.jucesp.endereco.logradouro}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Número:</b> {{relatorio.jucesp.endereco.numero}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Complemento:</b> {{relatorio.jucesp.endereco.complemento}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Bairro:</b> {{relatorio.jucesp.endereco.bairro}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Município</b> {{relatorio.jucesp.endereco.municipio}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>CEP:</b> {{relatorio.jucesp.endereco.cep}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>UF:</b> {{relatorio.jucesp.endereco.uf}}</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="relatorio.jucesp.erro">
+  {{relatorio.jucesp.erro}}
+</ng-container>

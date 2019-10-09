@@ -1,19 +1,24 @@
+import { ToastService } from './../../core/services/toast.service';
 import { PortaisService } from './../../core/services/portais.service';
 import { BaseFormComponent } from 'src/app/form-default/base-form/base-form.component';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormValidation } from 'src/app/form-default/form-validation';
 import { ISearch } from 'src/app/core/models/search-portais.model';
 import { RelatorioModel } from 'src/app/core/models/relatorio.model';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portais-form',
   templateUrl: './portais-form.component.html',
   styleUrls: ['./portais-form.component.scss']
 })
-export class PortaisFormComponent extends BaseFormComponent implements OnInit {
+export class PortaisFormComponent extends BaseFormComponent implements OnInit, OnDestroy {
 
   @Output() relatorioPass: EventEmitter<RelatorioModel> = new EventEmitter();
+  idConsulta: string;
+  subsConsulta: Subscription;
+  consultaOk: boolean;
   portais = [
     'checkArisp',
     'checkArpensp',
@@ -69,12 +74,20 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private portalServ: PortaisService
+    private portalServ: PortaisService,
+    private toast: ToastService
   ) {
     super();
   }
 
   ngOnInit() {
+
+    this.subsConsulta = interval(15000).subscribe(temporizador => {
+      if (this.consultando === true) {
+        this.consultarStatus();
+      }
+    });
+
     this.formulario = this.fb.group({
       id: [null],
       nome: [null],
@@ -106,54 +119,46 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
     if (event.target.name === 'cpf') {
       this.portaisCpf.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
 
       if (this.formulario.get('placaVeiculo').value !== null && this.formulario.get('placaVeiculo').value !== '') {
         this.formulario.get('checkDetran').enable();
-        this.formulario.get('checkDetran').setValue(true);
       }
     }
 
     if (event.target.name === 'nome') {
       this.portaisNome.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
     }
 
     if (event.target.name === 'razaoSocial') {
       this.portaisRazaoSocial.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
     }
 
     if (event.target.name === 'placaVeiculo') {
       if (this.formulario.get('cpf').value !== null && this.formulario.get('cpf').value !== '') {
         this.formulario.get('checkDetran').enable();
-        this.formulario.get('checkDetran').setValue(true);
       }
     }
 
     if (event.target.name === 'numProcesso') {
       this.portaisProcesso.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
     }
 
     if (event.target.name === 'matriculaSap') {
       this.portaisMatricula.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
     }
 
     if (event.target.name === 'cnpj') {
       this.portaisCnpj.forEach(portal => {
         this.formulario.get(portal).enable();
-        this.formulario.get(portal).setValue(true);
       });
     }
   }
@@ -161,6 +166,12 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
   disableFields() {
     this.portais.forEach(portal => {
       this.formulario.get(portal).disable();
+    });
+  }
+
+  enableFields() {
+    this.portais.forEach(portal => {
+      this.formulario.get(portal).enable();
     });
   }
 
@@ -173,12 +184,6 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-    this.consultando = true;
-
-    this.disableFields();
-
-    this.formulario.disable();
 
     this.dadosConsulta = {
       nome: this.formulario.get('nome').value,
@@ -232,10 +237,37 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit {
       this.dadosConsulta.portais.push(10);
     }
 
-    this.portalServ.doRelatorio(this.dadosConsulta).subscribe(relatorio => {
-      this.portalServ.relatorioRetornado.emit(relatorio);
-    });
+    this.consultando = true;
 
+    this.disableFields();
+
+    this.formulario.disable();
+
+    this.portalServ.doRelatorio(this.dadosConsulta).subscribe(status => {
+      this.idConsulta = status.id_relatorio;
+      this.consultaOk = false;
+    }, (error) => {
+      this.toast.showError('Erro ao executar a consulta.');
+      this.consultando = false;
+      this.enableFields();
+      this.formulario.enable();
+    });
   }
 
+  consultarStatus() {
+    if (this.consultaOk === false) {
+      this.portalServ.getProcessamento(this.idConsulta).subscribe(retorno => {
+        this.consultaOk = true;
+        this.consultando = false;
+        this.enableFields();
+        this.formulario.enable();
+        this.portalServ.relatorioRetornado.emit(retorno.relatorio.relatorio);
+      });
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subsConsulta.unsubscribe();
+
+  }
 }

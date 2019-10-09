@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { RelatorioModel } from 'src/app/core/models/relatorio.model';
 
 @Component({
@@ -11,8 +11,23 @@ export class PortaisResultadoRelatorioComponent implements OnInit {
   ) { }
 
   @Input() relatorio: RelatorioModel;
-
+  @Output() evento: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
+  }
+
+  emitEvento() {
+    this.evento.emit();
+  }
+
+  print(divName) {
+    const printContents = document.getElementById(divName).innerHTML;
+    const popupWin = window.open('', '_blank', 'width=300,height=300');
+    popupWin.document.open();
+    popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /></head><body onload="window.print()">'
+      + printContents +
+      '</body></html>');
+    popupWin.document.close();
+
   }
 
 }

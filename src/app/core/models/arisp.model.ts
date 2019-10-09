@@ -4,4 +4,5 @@ export interface ArispModel {
         cartorio: string;
         matricula: string;
     }];
+    erro?: string;
 }

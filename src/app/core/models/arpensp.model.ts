@@ -16,4 +16,5 @@ export interface ArpenspModel {
         numRegistro: string;
         tipoLivro: string;
     };
+    erro?: string;
 }

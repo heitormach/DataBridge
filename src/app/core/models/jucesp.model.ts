@@ -16,4 +16,5 @@ export interface JucespModel {
         cep: string;
         uf: string;
     };
+    erro?: string;
 }

@@ -17,7 +17,6 @@ export class PortaisHtmlComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.portalServ.relatorioRetornado.subscribe(relatorio => {
       this.returned = true;
       this.relatorio = relatorio;

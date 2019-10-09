@@ -1,0 +1,4 @@
+<app-historico-list *ngIf="!relatorioSelecionado"></app-historico-list>
+
+<app-portais-resultado-relatorio (evento)="relatorioSelecionado = false" [relatorio]="relatorio"
+    *ngIf="relatorioSelecionado"></app-portais-resultado-relatorio>

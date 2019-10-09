@@ -27,6 +27,7 @@ export interface SivecModel {
         dataNascimentoAdicional: string;
         naturalidadeAdicional: string;
         nomePaiAdicional: string;
-        NomeMãeAdicional: string;
+        nomeMaeAdicional: string;
     };
+    erro?: string;
 }

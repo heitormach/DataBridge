@@ -13,4 +13,5 @@ export interface SielModel {
         naturalidade: string;
         codValidacao: string;
     };
+    erro?: string;
 }

@@ -49,4 +49,5 @@ export interface DetranModel {
             descricao: string;
         }
     ];
+    erro?: string;
 }
