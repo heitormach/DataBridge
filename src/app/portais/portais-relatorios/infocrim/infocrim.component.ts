@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { RelatorioModel } from 'src/app/core/models/relatorio.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-infocrim',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfocrimComponent implements OnInit {
 
+  @Input() relatorio: RelatorioModel;
   constructor() { }
 
   ngOnInit() {

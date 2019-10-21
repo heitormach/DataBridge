@@ -1,3 +1,49 @@
-<p>
-  infocrim works!
-</p>
+<ng-container *ngIf="relatorio.infocrim.cabecalho">
+  <div class="row">
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.cabecalho"></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor1"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor2"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor3"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor4"></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.vitima.dadosVitima1"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.vitima.dadosVitima2"></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.representante.dadosRepresentante1"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.representante.dadosRepresentante2"></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [innerHTML]="relatorio.infocrim.historico.historico"></pre>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="relatorio.infocrim.erro"></ng-container>

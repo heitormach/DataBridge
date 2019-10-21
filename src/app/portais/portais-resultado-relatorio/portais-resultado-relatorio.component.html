@@ -133,7 +133,7 @@
 
             <div class="tab-pane" id="infocrim">
               <ng-container *ngIf="relatorio.infocrim">
-                <app-infocrim></app-infocrim>
+                <app-infocrim [relatorio]="relatorio"></app-infocrim>
               </ng-container>
               <ng-container *ngIf="!relatorio.infocrim">
                 <a>Dados não solicitados</a>
@@ -302,6 +302,7 @@
         </div>
         <div class="card-body">
           <ng-container *ngIf="relatorio.infocrim">
+            <app-infocrim [relatorio]="relatorio"></app-infocrim>
           </ng-container>
           <ng-container *ngIf="!relatorio.infocrim">
             <a>Dados não solicitados</a>
