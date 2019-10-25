@@ -31,4 +31,12 @@ export class PortaisService {
   getHistorico() {
     return this.http.get<ResultConsultaModel[]>(`${environment.apiUrl}/api/relatorio/v1/consulta_relatorio`);
   }
+
+  getArquivo(nomeArquivo: string) {
+    const header = new HttpHeaders({
+      nome_arquivo: nomeArquivo
+    });
+
+    return this.http.get<any>(`${environment.apiUrl}/api/relatorio/v1/consulta_arquivo`, { headers: header });
+  }
 }

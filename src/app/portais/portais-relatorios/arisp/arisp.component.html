@@ -1,5 +1,5 @@
-<ng-container *ngIf="relatorio.arisp.dados">
-  <ng-container *ngFor="let arisp of relatorio.arisp.dados">
+<ng-container *ngIf="relatorio.arisp.data">
+  <ng-container *ngFor="let arisp of relatorio.arisp.data">
     <div class="row">
       <div class="col-md-12">
         <a><b>Cidade:</b> {{arisp.cidade}}</a>
@@ -15,6 +15,18 @@
         <a><b>Matrícula:</b> {{arisp.matricula}}</a>
       </div>
     </div>
+
+    <ng-container *ngIf="arisp.anexo.nome_arquivo">
+      <div class="row noPrint">
+        <div class="col-md-12">
+          <button id="{{arisp.anexo.nome_arquivo}}" matTooltip="Download do Arquivo"
+            (click)="downloadPDF(arisp.anexo.nome_arquivo, arisp)" mat-raised-button
+            color="primary">{{arisp.anexo.nome_arquivo}}</button>
+        </div>
+        <br>
+        <br>
+      </div>
+    </ng-container>
     <hr>
   </ng-container>
 </ng-container>

@@ -1,40 +1,40 @@
-<ng-container *ngIf="relatorio.jucesp.nomeEmpresa">
+<ng-container *ngIf="relatorio.jucesp.data.nomeEmpresa">
   <div class="row">
     <div class="col-md-6">
-      <a><b>Nome Empresa: </b> {{relatorio.jucesp.nomeEmpresa}}</a>
+      <a><b>Nome Empresa: </b> {{relatorio.jucesp.data.nomeEmpresa}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Tipo:</b> {{relatorio.jucesp.tipoEmpresa}}</a>
+      <a><b>Tipo:</b> {{relatorio.jucesp.data.tipoEmpresa}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Data Constituição: </b> {{relatorio.jucesp.dataConstituicao}}</a>
+      <a><b>Data Constituição: </b> {{relatorio.jucesp.data.dataConstituicao}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Data Início Atividade:</b> {{relatorio.jucesp.dtIniAtiv}}</a>
+      <a><b>Data Início Atividade:</b> {{relatorio.jucesp.data.dtIniAtiv}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>CNPJ:</b> {{relatorio.jucesp.cnpj}}</a>
+      <a><b>CNPJ:</b> {{relatorio.jucesp.data.cnpj}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Inscrição Estadual:</b> {{relatorio.jucesp.ie}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <a><b>Objeto:</b> {{relatorio.jucesp.objeto}}</a>
+      <a><b>Inscrição Estadual:</b> {{relatorio.jucesp.data.ie}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <a><b>Capital:</b> {{relatorio.jucesp.capital}}</a>
+      <a><b>Objeto:</b> {{relatorio.jucesp.data.objeto}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <a><b>Capital:</b> {{relatorio.jucesp.data.capital}}</a>
     </div>
   </div>
 
@@ -48,41 +48,42 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Logradouro:</b> {{relatorio.jucesp.endereco.logradouro}}</a>
+      <a><b>Logradouro:</b> {{relatorio.jucesp.data.endereco.logradouro}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Número:</b> {{relatorio.jucesp.endereco.numero}}</a>
+      <a><b>Número:</b> {{relatorio.jucesp.data.endereco.numero}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Complemento:</b> {{relatorio.jucesp.endereco.complemento}}</a>
+      <a><b>Complemento:</b> {{relatorio.jucesp.data.endereco.complemento}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Bairro:</b> {{relatorio.jucesp.endereco.bairro}}</a>
+      <a><b>Bairro:</b> {{relatorio.jucesp.data.endereco.bairro}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Município</b> {{relatorio.jucesp.endereco.municipio}}</a>
+      <a><b>Município</b> {{relatorio.jucesp.data.endereco.municipio}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>CEP:</b> {{relatorio.jucesp.endereco.cep}}</a>
+      <a><b>CEP:</b> {{relatorio.jucesp.data.endereco.cep}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>UF:</b> {{relatorio.jucesp.endereco.uf}}</a>
+      <a><b>UF:</b> {{relatorio.jucesp.data.endereco.uf}}</a>
     </div>
   </div>
 
-  <ng-container *ngIf="relatorio.jucesp.arquivo">
+  <ng-container *ngIf="relatorio.jucesp.data.anexo.arquivo">
     <div class="row noPrint">
       <div class="col-md-12">
-        <button (click)="downloadPDF(relatorio)" mat-raised-button color="warn">jucesp.pdf</button>
+        <button (click)="downloadPDF(relatorio.jucesp.data.anexo.arquivo, relatorio.jucesp.data.anexo.nome_arquivo)"
+          mat-raised-button color="warn">{{relatorio.jucesp.data.anexo.nome_arquivo}}</button>
       </div>
       <br>
       <br>

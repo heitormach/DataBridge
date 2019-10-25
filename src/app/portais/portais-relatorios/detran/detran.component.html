@@ -1,4 +1,4 @@
-<ng-container *ngIf="relatorio.detran.dadosDaImgCnh">
+<!--<ng-container *ngIf="relatorio.detran.data.dadosDaImgCnh">
   <div class="row" style="text-align: center">
     <div class="col-md-12">
       <img [src]="exibirFoto()">
@@ -7,102 +7,102 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Nome do Condutor:</b> {{relatorio.detran.dadosDaImgCnh.nomeCondutor}}</a>
+      <a><b>Nome do Condutor:</b> {{relatorio.detran.data.dadosDaImgCnh.nomeCondutor}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Nome do Pai:</b> {{relatorio.detran.dadosDaImgCnh.nomePai}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Nome da Mãe:</b> {{relatorio.detran.dadosDaImgCnh.nomeMae}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Data de Nascimento:</b> {{relatorio.detran.dadosDaImgCnh.nascimento}}</a>
+      <a><b>Nome do Pai:</b> {{relatorio.detran.data.dadosDaImgCnh.nomePai}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.detran.dadosDaImgCnh.cpf}}</a>
+      <a><b>Nome da Mãe:</b> {{relatorio.detran.data.dadosDaImgCnh.nomeMae}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Identidade:</b> {{relatorio.detran.dadosDaImgCnh.identidade}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Tipográfico:</b> {{relatorio.detran.dadosDaImgCnh.tipografico}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Registro:</b> {{relatorio.detran.dadosDaImgCnh.registro}}</a>
+      <a><b>Data de Nascimento:</b> {{relatorio.detran.data.dadosDaImgCnh.nascimento}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>RENACH:</b> {{relatorio.detran.dadosDaImgCnh.renach}}</a>
+      <a><b>CPF:</b> {{relatorio.detran.data.dadosDaImgCnh.cpf}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Categoria:</b> {{relatorio.detran.dadosDaImgCnh.categoria}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Data de Emissão:</b> {{relatorio.detran.dadosDaImgCnh.emissao}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Nacionalidade:</b> {{relatorio.detran.condutor.nacionalidade}}</a>
+      <a><b>Identidade:</b> {{relatorio.detran.data.dadosDaImgCnh.identidade}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>RNE:</b> {{relatorio.detran.condutor.rne}}</a>
+      <a><b>Tipográfico:</b> {{relatorio.detran.data.dadosDaImgCnh.tipografico}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Validade RNE:</b> {{relatorio.detran.condutor.valRNE}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>RG:</b> {{relatorio.detran.condutor.rg}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Orgão Expedidor:</b> {{relatorio.detran.condutor.orgaoEx}}</a>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.detran.condutor.CPF}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Sexo:</b> {{relatorio.detran.condutor.sexo}}</a>
+      <a><b>Registro:</b> {{relatorio.detran.data.dadosDaImgCnh.registro}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Município:</b> {{relatorio.detran.condutor.municipio}}</a>
+      <a><b>RENACH:</b> {{relatorio.detran.data.dadosDaImgCnh.renach}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>UF:</b> {{relatorio.detran.condutor.UF}}</a>
+      <a><b>Categoria:</b> {{relatorio.detran.data.dadosDaImgCnh.categoria}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Natural De:</b> {{relatorio.detran.condutor.natural}}</a>
+      <a><b>Data de Emissão:</b> {{relatorio.detran.data.dadosDaImgCnh.emissao}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>País:</b> {{relatorio.detran.condutor.pais}}</a>
+      <a><b>Nacionalidade:</b> {{relatorio.detran.data.condutor.nacionalidade}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>RNE:</b> {{relatorio.detran.data.condutor.rne}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Validade RNE:</b> {{relatorio.detran.data.condutor.valRNE}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>RG:</b> {{relatorio.detran.data.condutor.rg}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Orgão Expedidor:</b> {{relatorio.detran.data.condutor.orgaoEx}}</a>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>CPF:</b> {{relatorio.detran.data.condutor.CPF}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Sexo:</b> {{relatorio.detran.data.condutor.sexo}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Município:</b> {{relatorio.detran.data.condutor.municipio}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>UF:</b> {{relatorio.detran.data.condutor.UF}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Natural De:</b> {{relatorio.detran.data.condutor.natural}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>País:</b> {{relatorio.detran.data.condutor.pais}}</a>
     </div>
   </div>
 
@@ -118,52 +118,52 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Registro:</b> {{relatorio.detran.cnh.registro}}</a>
+      <a><b>Registro:</b> {{relatorio.detran.data.cnh.registro}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Local:</b> {{relatorio.detran.cnh.local}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Espelho PID:</b> {{relatorio.detran.cnh.espelhoPID}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Data de Emissão:</b> {{relatorio.detran.cnh.emiCNH}}</a>
+      <a><b>Local:</b> {{relatorio.detran.data.cnh.local}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>PGU:</b> {{relatorio.detran.cnh.pgu}}</a>
+      <a><b>Espelho PID:</b> {{relatorio.detran.data.cnh.espelhoPID}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Categoria:</b> {{relatorio.detran.cnh.categoria}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Primeira Habilitação:</b> {{relatorio.detran.cnh.pHabil}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Status:</b> {{relatorio.detran.cnh.status}}</a>
+      <a><b>Data de Emissão:</b> {{relatorio.detran.data.cnh.emiCNH}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Espelho CNH:</b> {{relatorio.detran.cnh.espelhoCNH}}</a>
+      <a><b>PGU:</b> {{relatorio.detran.data.cnh.pgu}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Validade CNH:</b> {{relatorio.detran.cnh.valCNH}}</a>
+      <a><b>Categoria:</b> {{relatorio.detran.data.cnh.categoria}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Pontuação:</b> {{relatorio.detran.cnh.pontuacao}}</a>
+      <a><b>Primeira Habilitação:</b> {{relatorio.detran.data.cnh.pHabil}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Status:</b> {{relatorio.detran.data.cnh.status}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Espelho CNH:</b> {{relatorio.detran.data.cnh.espelhoCNH}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Validade CNH:</b> {{relatorio.detran.data.cnh.valCNH}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Pontuação:</b> {{relatorio.detran.data.cnh.pontuacao}}</a>
     </div>
   </div>
 
@@ -177,7 +177,7 @@
 
   <hr>
 
-  <ng-container *ngFor="let ocorrencia of relatorio.detran.ocorrencias">
+  <ng-container *ngFor="let ocorrencia of relatorio.detran.data.ocorrencias">
     <div class="row">
       <div class="col-md-12">
         <a><b>Data:</b> {{ocorrencia.data}}</a>
@@ -196,4 +196,4 @@
 
 <ng-container *ngIf="relatorio.detran.erro">
   <a>{{relatorio.detran.erro}}</a>
-</ng-container>
+</ng-container>-->

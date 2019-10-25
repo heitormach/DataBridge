@@ -1,4 +1,4 @@
-<ng-container *ngIf="relatorio.cadesp.cabecalho">
+<ng-container *ngIf="relatorio.cadesp.data.cabecalho">
   <div class="row">
     <div class="col-md-12">
       <h5><b>Cabeçalho</b></h5>
@@ -7,34 +7,34 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Nome Empresa:</b> {{relatorio.cadesp.cabecalho.nomeEmpresa}}</a>
+      <a><b>Nome Empresa:</b> {{relatorio.cadesp.data.cabecalho.nomeEmpresa}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>CNPJ:</b> {{relatorio.cadesp.cabecalho.cnpj}}</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Inscrição Estadual:</b> {{relatorio.cadesp.cabecalho.ie}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>DRT:</b> {{relatorio.cadesp.cabecalho.drt}}</a>
+      <a><b>CNPJ:</b> {{relatorio.cadesp.data.cabecalho.cnpj}}</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Situação:</b> {{relatorio.cadesp.cabecalho.situacao}}</a>
+      <a><b>Inscrição Estadual:</b> {{relatorio.cadesp.data.cabecalho.ie}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Data da Inscrição:</b> {{relatorio.cadesp.cabecalho.dataInscricao}}</a>
+      <a><b>DRT:</b> {{relatorio.cadesp.data.cabecalho.drt}}</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Regime:</b> {{relatorio.cadesp.cabecalho.regime}}</a>
+      <a><b>Situação:</b> {{relatorio.cadesp.data.cabecalho.situacao}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Posto:</b> {{relatorio.cadesp.cabecalho.posto}}</a>
+      <a><b>Data da Inscrição:</b> {{relatorio.cadesp.data.cabecalho.dataInscricao}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Regime:</b> {{relatorio.cadesp.data.cabecalho.regime}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Posto:</b> {{relatorio.cadesp.data.cabecalho.posto}}</a>
     </div>
   </div>
   <hr>
@@ -46,47 +46,47 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Nome Fantasia:</b> {{relatorio.cadesp.geral.nomeFantasia}}</a>
+      <a><b>Nome Fantasia:</b> {{relatorio.cadesp.data.geral.nomeFantasia}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>CNPJ:</b> {{relatorio.cadesp.geral.cnpj}}</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Inscrição Estadual:</b> {{relatorio.cadesp.geral.ie}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>NIRE:</b> {{relatorio.cadesp.geral.nire}}</a>
+      <a><b>CNPJ:</b> {{relatorio.cadesp.data.geral.cnpj}}</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Situação Cadastral:</b> {{relatorio.cadesp.geral.sitCadastral}}</a>
+      <a><b>Inscrição Estadual:</b> {{relatorio.cadesp.data.geral.ie}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Ocorrência Fiscal:</b> {{relatorio.cadesp.geral.ocorrenciaFiscal}}</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Tipo Unidade:</b> {{relatorio.cadesp.geral.tipoUnidade}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Data Inscrição Estado:</b> {{relatorio.cadesp.geral.dtInscricaoEstado}}</a>
+      <a><b>NIRE:</b> {{relatorio.cadesp.data.geral.nire}}</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Data Início IE:</b> {{relatorio.cadesp.geral.dtInicioIE}}</a>
+      <a><b>Situação Cadastral:</b> {{relatorio.cadesp.data.geral.sitCadastral}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Data Início Situação:</b> {{relatorio.cadesp.geral.dtInicioSituacao}}</a>
+      <a><b>Ocorrência Fiscal:</b> {{relatorio.cadesp.data.geral.ocorrenciaFiscal}}</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <a><b>Forma de Atuação:</b> {{relatorio.cadesp.geral.formasAtuacao}}</a>
+      <a><b>Tipo Unidade:</b> {{relatorio.cadesp.data.geral.tipoUnidade}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data Inscrição Estado:</b> {{relatorio.cadesp.data.geral.dtInscricaoEstado}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data Início IE:</b> {{relatorio.cadesp.data.geral.dtInicioIE}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data Início Situação:</b> {{relatorio.cadesp.data.geral.dtInicioSituacao}}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Forma de Atuação:</b> {{relatorio.cadesp.data.geral.formasAtuacao}}</a>
     </div>
   </div>
 </ng-container>

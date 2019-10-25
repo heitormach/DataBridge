@@ -1,49 +1,59 @@
-<ng-container *ngIf="relatorio.infocrim.cabecalho">
+<ng-container *ngIf="relatorio.infocrim.data.cabecalho">
   <div class="row">
     <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.cabecalho"></pre>
+      <pre [outerHTML]="relatorio.infocrim.data.cabecalho"></pre>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor1"></pre>
-    </div>
-    <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor2"></pre>
-    </div>
-    <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor3"></pre>
-    </div>
-    <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.autor.dadosAutor4"></pre>
-    </div>
-  </div>
+  <br>
 
   <div class="row">
     <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.vitima.dadosVitima1"></pre>
+      <pre [outerHTML]="relatorio.infocrim.data.autor.dadosAutor1"></pre>
     </div>
     <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.vitima.dadosVitima2"></pre>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.representante.dadosRepresentante1"></pre>
+      <pre [outerHTML]="relatorio.infocrim.data.autor.dadosAutor2"></pre>
     </div>
     <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.representante.dadosRepresentante2"></pre>
+      <pre [outerHTML]="relatorio.infocrim.data.autor.dadosAutor3"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [outerHTML]="relatorio.infocrim.data.autor.dadosAutor4"></pre>
     </div>
   </div>
 
+  <br>
+
   <div class="row">
     <div class="col-md-12">
-      <pre [innerHTML]="relatorio.infocrim.historico.historico"></pre>
+      <pre [outerHTML]="relatorio.infocrim.data.vitima.dadosVitima1"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [outerHTML]="relatorio.infocrim.data.vitima.dadosVitima2"></pre>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [outerHTML]="relatorio.infocrim.data.representante.dadosRepresentante1"></pre>
+    </div>
+    <div class="col-md-12">
+      <pre [outerHTML]="relatorio.infocrim.data.representante.dadosRepresentante2"></pre>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <pre [outerHTML]="relatorio.infocrim.data.historico.historico"></pre>
     </div>
   </div>
 
 </ng-container>
 
-<ng-container *ngIf="relatorio.infocrim.erro"></ng-container>
+<ng-container *ngIf="relatorio.infocrim.erro">
+  <a>{{relatorio.infocrim.erro}}</a>
+</ng-container>

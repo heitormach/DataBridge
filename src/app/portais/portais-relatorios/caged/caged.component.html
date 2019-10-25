@@ -1,4 +1,4 @@
-<ng-container *ngIf="relatorio.caged.autorizado_responsavel">
+<ng-container *ngIf="relatorio.caged.data.autorizado_responsavel">
   <div class="row">
     <div class="col-md-12">
       <h5><b>Autorizado Responsável</b></h5>
@@ -9,55 +9,55 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>CNPJ:</b> {{relatorio.caged.autorizado_responsavel.cnpj_cpf_cei}}</a>
+      <a><b>CNPJ:</b> {{relatorio.caged.data.autorizado_responsavel.cnpj_cpf_cei}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Razão Social:</b> {{relatorio.caged.autorizado_responsavel.razao_social}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Logradouro:</b> {{relatorio.caged.autorizado_responsavel.logradouro}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Bairro:</b> {{relatorio.caged.autorizado_responsavel.bairro}}</a>
+      <a><b>Razão Social:</b> {{relatorio.caged.data.autorizado_responsavel.razao_social}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Município:</b> {{relatorio.caged.autorizado_responsavel.municipio}}</a>
+      <a><b>Logradouro:</b> {{relatorio.caged.data.autorizado_responsavel.logradouro}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Estado:</b> {{relatorio.caged.autorizado_responsavel.uf}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>CEP:</b> {{relatorio.caged.autorizado_responsavel.cep}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Nome:</b> {{relatorio.caged.autorizado_responsavel.razao_social}}</a>
+      <a><b>Bairro:</b> {{relatorio.caged.data.autorizado_responsavel.bairro}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.caged.autorizado_responsavel.cpf}}</a>
+      <a><b>Município:</b> {{relatorio.caged.data.autorizado_responsavel.municipio}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Telefone:</b> {{relatorio.caged.autorizado_responsavel.telefone}}</a>
+      <a><b>Estado:</b> {{relatorio.caged.data.autorizado_responsavel.uf}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Ramal:</b> {{relatorio.caged.autorizado_responsavel.ramal}}</a>
+      <a><b>CEP:</b> {{relatorio.caged.data.autorizado_responsavel.cep}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Email:</b> {{relatorio.caged.autorizado_responsavel.email}}</a>
+      <a><b>Nome:</b> {{relatorio.caged.data.autorizado_responsavel.razao_social}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>CPF:</b> {{relatorio.caged.data.autorizado_responsavel.cpf}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Telefone:</b> {{relatorio.caged.data.autorizado_responsavel.telefone}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Ramal:</b> {{relatorio.caged.data.autorizado_responsavel.ramal}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Email:</b> {{relatorio.caged.data.autorizado_responsavel.email}}</a>
     </div>
   </div>
 
@@ -73,37 +73,37 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>CNAE:</b> {{relatorio.caged.empresa.atividade_economica_cnae}}</a>
+      <a><b>CNAE:</b> {{relatorio.caged.data.empresa.atividade_economica_cnae}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Número de Filiais:</b> {{relatorio.caged.empresa.totais.numero_filiais}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Admissões:</b> {{relatorio.caged.empresa.totais.admissoes}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Variação Absoluta:</b> {{relatorio.caged.empresa.totais.variacao_absoluta}}</a>
+      <a><b>Número de Filiais:</b> {{relatorio.caged.data.empresa.totais.numero_filiais}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Total de Vínculos:</b> {{relatorio.caged.empresa.totais.total_vinculos}}</a>
+      <a><b>Admissões:</b> {{relatorio.caged.data.empresa.totais.admissoes}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Desligamentos:</b> {{relatorio.caged.empresa.totais.desligamentos}}</a>
+      <a><b>Variação Absoluta:</b> {{relatorio.caged.data.empresa.totais.variacao_absoluta}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Primeiro Dia:</b> {{relatorio.caged.empresa.totais.primeiro_dia}}</a>
+      <a><b>Total de Vínculos:</b> {{relatorio.caged.data.empresa.totais.total_vinculos}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Último Dia:</b> {{relatorio.caged.empresa.totais.ultimo_dia}}</a>
+      <a><b>Desligamentos:</b> {{relatorio.caged.data.empresa.totais.desligamentos}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Primeiro Dia:</b> {{relatorio.caged.data.empresa.totais.primeiro_dia}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Último Dia:</b> {{relatorio.caged.data.empresa.totais.ultimo_dia}}</a>
     </div>
   </div>
 
@@ -119,61 +119,61 @@
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Nome:</b> {{relatorio.caged.trabalhador.nome}}</a>
+      <a><b>Nome:</b> {{relatorio.caged.data.trabalhador.nome}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>PIS Base:</b> {{relatorio.caged.trabalhador.pis_base}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.caged.trabalhador.cpf}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>CTPS:</b> {{relatorio.caged.trabalhador.ctps}}</a>
+      <a><b>PIS Base:</b> {{relatorio.caged.data.trabalhador.pis_base}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Situação PIS:</b> {{relatorio.caged.trabalhador.situacao_pis}}</a>
+      <a><b>CPF:</b> {{relatorio.caged.data.trabalhador.cpf}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Nacionalidade:</b> {{relatorio.caged.trabalhador.nacionalidade}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Grau de Instrução:</b> {{relatorio.caged.trabalhador.grau_de_instrucao}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Pessoa Com Deficiência:</b> {{relatorio.caged.trabalhador.pcd}}</a>
+      <a><b>CTPS:</b> {{relatorio.caged.data.trabalhador.ctps}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Data de Nascimento:</b> {{relatorio.caged.trabalhador.data_nascimento}}</a>
+      <a><b>Situação PIS:</b> {{relatorio.caged.data.trabalhador.situacao_pis}}</a>
     </div>
     <div class="col-md-6">
-      <a><b>Sexo:</b> {{relatorio.caged.trabalhador.sexo}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Raça:</b> {{relatorio.caged.trabalhador.raca}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Tempo de Trabalho CAGED:</b> {{relatorio.caged.trabalhador.tempo_trabalho.caged}}</a>
+      <a><b>Nacionalidade:</b> {{relatorio.caged.data.trabalhador.nacionalidade}}</a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <a><b>Tempo de Trabalho Rais:</b> {{relatorio.caged.trabalhador.tempo_trabalho.rais}}</a>
+      <a><b>Grau de Instrução:</b> {{relatorio.caged.data.trabalhador.grau_de_instrucao}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Pessoa Com Deficiência:</b> {{relatorio.caged.data.trabalhador.pcd}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Data de Nascimento:</b> {{relatorio.caged.data.trabalhador.data_nascimento}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Sexo:</b> {{relatorio.caged.data.trabalhador.sexo}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Raça:</b> {{relatorio.caged.data.trabalhador.raca}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Tempo de Trabalho CAGED:</b> {{relatorio.caged.data.trabalhador.tempo_trabalho.caged}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Tempo de Trabalho Rais:</b> {{relatorio.caged.data.trabalhador.tempo_trabalho.rais}}</a>
     </div>
   </div>
 
@@ -187,7 +187,7 @@
 
   <hr>
 
-  <ng-container *ngFor="let vinculo of relatorio.caged.trabalhador.vinculos_trabalhador">
+  <ng-container *ngFor="let vinculo of relatorio.caged.data.trabalhador.vinculos_trabalhador">
     <div class="row">
       <div class="col-md-6">
         <a><b>Fonte:</b> {{vinculo.fonte}}</a>
