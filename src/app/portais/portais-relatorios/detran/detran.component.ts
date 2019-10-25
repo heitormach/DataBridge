@@ -19,7 +19,7 @@ export class DetranComponent implements OnInit {
   }
 
   exibirFoto() {
-    return this.sanitizer.bypassSecurityTrustUrl('data:Image/*;base64,' + this.relatorio.detran.dadosDaImgCnh.foto);
+    return this.sanitizer.bypassSecurityTrustUrl('data:Image/*;base64,' + this.relatorio.detran.data.dadosDaImgCnh.foto);
   }
 
 }
