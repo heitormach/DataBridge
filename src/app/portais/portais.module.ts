@@ -19,9 +19,10 @@ import { JucespComponent } from './portais-relatorios/jucesp/jucesp.component';
 import { SielComponent } from './portais-relatorios/siel/siel.component';
 import { SivecComponent } from './portais-relatorios/sivec/sivec.component';
 import { HistoricoHtmlComponent } from './historico-html/historico-html.component';
+import { CensecComponent } from './portais-relatorios/censec/censec.component';
 
 @NgModule({
-  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent, PortaisResultadoRelatorioComponent, PortaisResultadoPrintComponent, ArispComponent, ArpenspComponent, CadespComponent, CagedComponent, DetranComponent, InfocrimComponent, JucespComponent, SielComponent, SivecComponent, HistoricoHtmlComponent],
+  declarations: [PortaisHtmlComponent, PortaisFormComponent, ConfigComponent, HistoricoListComponent, PortaisResultadoRelatorioComponent, PortaisResultadoPrintComponent, ArispComponent, ArpenspComponent, CadespComponent, CagedComponent, DetranComponent, InfocrimComponent, JucespComponent, SielComponent, SivecComponent, HistoricoHtmlComponent, CensecComponent],
   imports: [
     CommonModule,
     FormsModule,

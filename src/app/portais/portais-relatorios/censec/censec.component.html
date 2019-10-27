@@ -1,0 +1,116 @@
+<ng-container *ngIf="relatorio.censec.data">
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Carga: </b>{{relatorio.censec.data.envio_carga.carga}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Mês: </b>{{relatorio.censec.data.envio_carga.mes}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Ato: </b>{{relatorio.censec.data.envio_carga.ato}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Data do Ato: </b>{{relatorio.censec.data.envio_carga.data_ato}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Livro: </b>{{relatorio.censec.data.envio_carga.livro}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Complemento Livro: </b>{{relatorio.censec.data.envio_carga.complemento_livro}}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a><b>Folha: </b>{{relatorio.censec.data.envio_carga.folha}}</a>
+    </div>
+    <div class="col-md-6">
+      <a><b>Complemento Folha: </b>{{relatorio.censec.data.envio_carga.complemento_folha}}</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <h5>Partes Envolvidas</h5>
+
+  <hr>
+
+  <ng-container *ngFor="let partesEnvolvidas of relatorio.censec.data.partes_envolvidas">
+    <div class="row">
+      <div class="col-md-4">
+        <a><b>Nome: </b>{{partesEnvolvidas.nome}}</a>
+      </div>
+
+      <div class="col-md-4">
+        <a><b>CPF/CNPJ: </b>{{partesEnvolvidas.cpf_cnpj}}</a>
+      </div>
+
+      <div class="col-md-4">
+        <a><b>Qualidade: </b> {{partesEnvolvidas.qualidade}}</a>
+      </div>
+
+    </div>
+  </ng-container>
+
+  <hr>
+
+  <h5>Dados Cartório</h5>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <a><b>UF: </b>{{relatorio.censec.data.dados_cartorio.uf}}</a>
+    </div>
+
+    <div class="col-md-4">
+      <a><b>Município: </b>{{relatorio.censec.data.dados_cartorio.municipio}}</a>
+    </div>
+
+    <div class="col-md-4">
+      <a><b>Cartório: </b> {{relatorio.censec.data.dados_cartorio.cartorio}}</a>
+    </div>
+  </div>
+
+  <hr>
+  <h5>Contatos do Cartório</h5>
+  <hr>
+
+  <ng-container *ngFor="let contato of relatorio.censec.data.dados_cartorio.contato_cartorio">
+    <div class="row">
+      <div class="col-md-3">
+        <a><b>Telefone: </b>{{contato.telefone}}</a>
+      </div>
+
+      <div class="col-md-2">
+        <a><b>Tipo: </b>{{contato.tipo}}</a>
+      </div>
+
+      <div class="col-md-2">
+        <a><b>Ramal: </b>{{contato.ramal}}</a>
+      </div>
+
+      <div class="col-md-3">
+        <a><b>Contato: </b>{{contato.contato}}</a>
+      </div>
+
+      <div class="col-md-2">
+        <a><b>Status: </b>{{contato.status}}</a>
+      </div>
+    </div>
+
+    <hr>
+
+  </ng-container>
+
+</ng-container>
+
+<ng-container *ngIf="relatorio.censec.erro">
+  <a>{{relatorio.arisp.erro}}</a>
+</ng-container>

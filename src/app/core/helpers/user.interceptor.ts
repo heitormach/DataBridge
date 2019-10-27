@@ -23,7 +23,6 @@ export class UserInterceptor implements HttpInterceptor {
                 }
             });
         } else {
-            console.log(request);
         }
         return next.handle(request);
     }

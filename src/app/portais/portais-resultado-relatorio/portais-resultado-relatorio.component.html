@@ -120,6 +120,12 @@
             </div>
 
             <div class="tab-pane" id="censec">
+              <ng-container *ngIf="relatorio.censec">
+                <app-censec [relatorio]="relatorio"></app-censec>
+              </ng-container>
+              <ng-container *ngIf="!relatorio.censec">
+                <a>Dados não solicitados</a>
+              </ng-container>
             </div>
 
             <div class="tab-pane" id="detran">
@@ -266,6 +272,12 @@
         </div>
         <div class="card-body">
           <div class="tab-pane" id="censec">
+            <ng-container *ngIf="relatorio.censec">
+              <app-censec [relatorio]="relatorio"></app-censec>
+            </ng-container>
+            <ng-container *ngIf="!relatorio.censec">
+              <a>Dados não solicitados</a>
+            </ng-container>
           </div>
         </div>
       </div>

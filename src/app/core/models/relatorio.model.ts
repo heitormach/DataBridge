@@ -1,3 +1,4 @@
+import { CensecModel } from './censec.model';
 import { JucespModel } from './jucesp.model';
 import { InfoCrimModel } from './infocrim.model';
 import { DetranModel } from './detran.model';
@@ -12,7 +13,7 @@ export interface RelatorioModel {
     arpensp?: ArpenspModel;
     cadesp?: CadespModel;
     caged?: CagedModel;
-    censec?: {};
+    censec?: CensecModel;
     detran?: DetranModel;
     infocrim?: InfoCrimModel;
     jucesp?: JucespModel;
