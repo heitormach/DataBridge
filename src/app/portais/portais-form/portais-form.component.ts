@@ -257,11 +257,14 @@ export class PortaisFormComponent extends BaseFormComponent implements OnInit, O
   consultarStatus() {
     if (this.consultaOk === false) {
       this.portalServ.getProcessamento(this.idConsulta).subscribe(retorno => {
-        this.consultaOk = true;
-        this.consultando = false;
-        this.enableFields();
-        this.formulario.enable();
-        this.portalServ.relatorioRetornado.emit(retorno.relatorio.relatorio);
+        if (retorno.relatorio.relatorio === null) {
+        } else if (retorno.relatorio.relatorio !== null) {
+          this.consultaOk = true;
+          this.consultando = false;
+          this.enableFields();
+          this.formulario.enable();
+          this.portalServ.relatorioRetornado.emit(retorno.relatorio.relatorio);
+        }
       });
     }
   }

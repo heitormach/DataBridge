@@ -1,199 +1,76 @@
-<!--<ng-container *ngIf="relatorio.detran.data.dadosDaImgCnh">
+<ng-container *ngIf="relatorio.detran.data">
   <div class="row" style="text-align: center">
     <div class="col-md-12">
-      <img [src]="exibirFoto()">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Nome do Condutor:</b> {{relatorio.detran.data.dadosDaImgCnh.nomeCondutor}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Nome do Pai:</b> {{relatorio.detran.data.dadosDaImgCnh.nomePai}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Nome da Mãe:</b> {{relatorio.detran.data.dadosDaImgCnh.nomeMae}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Data de Nascimento:</b> {{relatorio.detran.data.dadosDaImgCnh.nascimento}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.detran.data.dadosDaImgCnh.cpf}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Identidade:</b> {{relatorio.detran.data.dadosDaImgCnh.identidade}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Tipográfico:</b> {{relatorio.detran.data.dadosDaImgCnh.tipografico}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Registro:</b> {{relatorio.detran.data.dadosDaImgCnh.registro}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>RENACH:</b> {{relatorio.detran.data.dadosDaImgCnh.renach}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Categoria:</b> {{relatorio.detran.data.dadosDaImgCnh.categoria}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Data de Emissão:</b> {{relatorio.detran.data.dadosDaImgCnh.emissao}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Nacionalidade:</b> {{relatorio.detran.data.condutor.nacionalidade}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>RNE:</b> {{relatorio.detran.data.condutor.rne}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Validade RNE:</b> {{relatorio.detran.data.condutor.valRNE}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>RG:</b> {{relatorio.detran.data.condutor.rg}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Orgão Expedidor:</b> {{relatorio.detran.data.condutor.orgaoEx}}</a>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>CPF:</b> {{relatorio.detran.data.condutor.CPF}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Sexo:</b> {{relatorio.detran.data.condutor.sexo}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Município:</b> {{relatorio.detran.data.condutor.municipio}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>UF:</b> {{relatorio.detran.data.condutor.UF}}</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Natural De:</b> {{relatorio.detran.data.condutor.natural}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>País:</b> {{relatorio.detran.data.condutor.pais}}</a>
+      <img *ngIf="relatorio.detran.data.anexo[0].arquivo" [src]="exibirFoto()">
     </div>
   </div>
 
   <hr>
 
   <div class="row">
-    <div class="col-md-12">
-      <h5><b>Dados CNH</b></h5>
+    <div class="col-md-4">
+      <a><b>Nome Condutor: </b> {{relatorio.detran.data.dadosCNH.nomeCondutor}}</a>
     </div>
-  </div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Registro:</b> {{relatorio.detran.data.cnh.registro}}</a>
+    <div class="col-md-4">
+      <a><b>RENACH: </b> {{relatorio.detran.data.dadosCNH.renach}}</a>
     </div>
-    <div class="col-md-6">
-      <a><b>Local:</b> {{relatorio.detran.data.cnh.local}}</a>
+    <div class="col-md-4">
+      <a><b>Registro: </b>{{relatorio.detran.data.dadosCNH.registro}}</a>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      <a><b>Espelho PID:</b> {{relatorio.detran.data.cnh.espelhoPID}}</a>
+    <div class="col-md-4">
+      <a><b>Nascimento: </b> {{relatorio.detran.data.dadosCNH.nascimento}}</a>
     </div>
-    <div class="col-md-6">
-      <a><b>Data de Emissão:</b> {{relatorio.detran.data.cnh.emiCNH}}</a>
+    <div class="col-md-4">
+      <a><b>Emissão: </b> {{relatorio.detran.data.dadosCNH.emissao}}</a>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>PGU:</b> {{relatorio.detran.data.cnh.pgu}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Categoria:</b> {{relatorio.detran.data.cnh.categoria}}</a>
+    <div class="col-md-4">
+      <a><b>Categoria: </b>{{relatorio.detran.data.dadosCNH.categoria}}</a>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      <a><b>Primeira Habilitação:</b> {{relatorio.detran.data.cnh.pHabil}}</a>
+    <div class="col-md-4">
+      <a><b>Nome do Pai: </b> {{relatorio.detran.data.dadosCNH.nomePai}}</a>
     </div>
-    <div class="col-md-6">
-      <a><b>Status:</b> {{relatorio.detran.data.cnh.status}}</a>
+    <div class="col-md-4">
+      <a><b>Nome da Mãe: </b> {{relatorio.detran.data.dadosCNH.nomeMae}}</a>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <a><b>Espelho CNH:</b> {{relatorio.detran.data.cnh.espelhoCNH}}</a>
-    </div>
-    <div class="col-md-6">
-      <a><b>Validade CNH:</b> {{relatorio.detran.data.cnh.valCNH}}</a>
+    <div class="col-md-4">
+      <a><b>Identidade: </b>{{relatorio.detran.data.dadosCNH.identidade}}</a>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      <a><b>Pontuação:</b> {{relatorio.detran.data.cnh.pontuacao}}</a>
+    <div class="col-md-4">
+      <a><b>CPF: </b> {{relatorio.detran.data.dadosCNH.cpf}}</a>
+    </div>
+    <div class="col-md-4">
+      <a><b>Tipográfico: </b> {{relatorio.detran.data.dadosCNH.tipografico}}</a>
     </div>
   </div>
 
-  <hr>
+  <hr class="noPrint">
 
-  <div class="row">
-    <div class="col-md-12">
-      <h5><b>Ocorrências</b></h5>
-    </div>
+  <h5 class="noPrint">Anexos</h5>
+
+  <hr class="noPrint">
+  <div class="row noPrint">
+    <ng-container *ngFor="let anexo of relatorio.detran.data.anexo">
+      <ng-container *ngIf="anexo.nome_arquivo">
+        <div class="col-md-12">
+          <button [disabled]="!anexo.arquivo" (click)="download(anexo.arquivo, anexo.nome_arquivo)"
+            class="btn btn-success noPrint">
+            <mat-icon>attachment</mat-icon> {{anexo.nome_arquivo}}
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
-
-  <hr>
-
-  <ng-container *ngFor="let ocorrencia of relatorio.detran.data.ocorrencias">
-    <div class="row">
-      <div class="col-md-12">
-        <a><b>Data:</b> {{ocorrencia.data}}</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <a><b>Descricao:</b> {{ocorrencia.descricao}}</a>
-      </div>
-    </div>
-    <hr>
-
-  </ng-container>
-
 </ng-container>
 
 <ng-container *ngIf="relatorio.detran.erro">
   <a>{{relatorio.detran.erro}}</a>
-</ng-container>-->
+</ng-container>
