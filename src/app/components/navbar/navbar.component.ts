@@ -19,16 +19,18 @@ export class NavbarComponent implements OnInit {
   constructor(
     location: Location,
     private element: ElementRef,
-    private router: Router,
-    private login: LoginService) {
+    private router: Router) {
     this.location = location;
     this.sidebarVisible = false;
   }
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+
     const navbar: HTMLElement = this.element.nativeElement;
+
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+
     this.router.events.subscribe((event) => {
       this.sidebarClose();
       var $layer: any = document.getElementsByClassName('close-layer')[0];
@@ -37,12 +39,16 @@ export class NavbarComponent implements OnInit {
         this.mobileMenuVisible = 0;
       }
     });
+
+    if (!sessionStorage.getItem('usuario')) {
+      this.router.navigate(['/login']);
+    }
   }
 
   sidebarOpen() {
     const toggleButton = this.toggleButton;
     const body = document.getElementsByTagName('body')[0];
-    setTimeout(function () {
+    setTimeout(() => {
       toggleButton.classList.add('toggled');
     }, 500);
 

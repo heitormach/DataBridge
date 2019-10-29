@@ -22,10 +22,14 @@ export class LoginFormComponent extends BaseFormComponent implements OnInit {
       usuario: [null, Validators.required],
       senha: [null, Validators.required]
     });
+
+    if (sessionStorage.getItem('usuario')) {
+      sessionStorage.removeItem('usuario');
+    }
   }
 
   onSubmit() {
-
+    this.loginServ.login(this.formulario.get('usuario').value, this.formulario.get('senha').value);
   }
 
 }

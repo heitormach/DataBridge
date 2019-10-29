@@ -1,14 +1,11 @@
-import { GlobalService } from './../services/global.service';
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserInterceptor implements HttpInterceptor {
-    global: GlobalService;
-
-    constructor(global: GlobalService) {
-        this.global = global;
+    usuario = JSON.parse(sessionStorage.getItem('usuario'));
+    constructor() {
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -19,7 +16,7 @@ export class UserInterceptor implements HttpInterceptor {
             && !request.url.endsWith('/api/relatorio/v1/consulta_arquivo')) {
             request = request.clone({
                 setHeaders: {
-                    usuario: `${this.global.usuario.login}`
+                    usuario: `${this.usuario.login}`
                 }
             });
         } else {

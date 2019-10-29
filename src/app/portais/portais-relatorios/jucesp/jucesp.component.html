@@ -1,4 +1,4 @@
-<ng-container *ngIf="relatorio.jucesp.data.nomeEmpresa">
+<ng-container *ngIf="relatorio.jucesp.data">
   <div class="row">
     <div class="col-md-12">
       <h4><b>JUCESP - Dados de Empresas</b></h4>
@@ -91,16 +91,15 @@
 
   <hr class="noPrint">
 
-  <ng-container *ngIf="relatorio.jucesp.data.anexo.arquivo">
-    <div class="row noPrint">
-      <div class="col-md-12">
-        <button (click)="downloadPDF(relatorio.jucesp.data.anexo.arquivo, relatorio.jucesp.data.anexo.nome_arquivo)"
-          mat-raised-button color="warn">{{relatorio.jucesp.data.anexo.nome_arquivo}}</button>
-      </div>
-      <br>
-      <br>
+  <div class="row noPrint">
+    <div class="col-md-12">
+      <button [disabled]="!relatorio.jucesp.data.anexo.arquivo"
+        (click)="downloadPDF(relatorio.jucesp.data.anexo.arquivo, relatorio.jucesp.data.anexo.nome_arquivo)"
+        mat-raised-button color="warn">{{relatorio.jucesp.data.anexo.nome_arquivo}}</button>
     </div>
-  </ng-container>
+    <br>
+    <br>
+  </div>
 </ng-container>
 
 <ng-container *ngIf="relatorio.jucesp.erro">

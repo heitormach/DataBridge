@@ -1,3 +1,4 @@
+import { ToastService } from './../../../core/services/toast.service';
 import { PortaisService } from './../../../core/services/portais.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { RelatorioModel } from 'src/app/core/models/relatorio.model';
@@ -14,7 +15,8 @@ export class ArispComponent implements OnInit {
   @Input() relatorio: RelatorioModel;
   constructor(
     private file: FileService,
-    private portalServ: PortaisService
+    private portalServ: PortaisService,
+    private toast: ToastService
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,10 @@ export class ArispComponent implements OnInit {
         botao.disabled = false;
         arisp.anexo.arquivo = dadosArquivo.arquivo;
         botao.click();
+      }, (error: any) => {
+        botao.disabled = false;
+        arisp.anexo.nome_arquivo = this.nomeAnterior;
+        this.toast.showError(`Erro ao realizar download do arquivo ${this.nomeAnterior}`);
       });
     } else {
       arisp.anexo.nome_arquivo = this.nomeAnterior;

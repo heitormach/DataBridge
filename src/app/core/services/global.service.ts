@@ -5,9 +5,8 @@ import { IUser } from '../models/user.model';
 export class GlobalService {
 
   usuario: IUser = {
-    login: 'testeaplicativo',
-    senha: 'teste',
-    cpf: '48463025803'
+    login: '',
+    senha: ''
   };
 
 }
