@@ -24,7 +24,7 @@
               </mat-form-field>
             </div>
           </div>
-          <button mat-raised-button (click)="onSubmit()" class="btn btn-success custom-entrar pull-right">
+          <button [disabled]="!formulario.valid" mat-raised-button (click)="onSubmit()" class="btn btn-success custom-entrar pull-right">
             Entrar</button>
           <div class="clearfix"></div>
         </form>
