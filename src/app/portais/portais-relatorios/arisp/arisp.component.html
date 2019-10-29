@@ -22,9 +22,9 @@
       </div>
     </div>
 
-    <ng-container class="noPrint" *ngIf="arisp.anexo.nome_arquivo">
+    <ng-container *ngIf="arisp.anexo.nome_arquivo">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 noPrint">
           <button id="{{arisp.anexo.nome_arquivo}}" matTooltip="Download do Arquivo"
             (click)="downloadPDF(arisp.anexo.nome_arquivo, arisp)" mat-raised-button
             color="primary">{{arisp.anexo.nome_arquivo}}</button>
