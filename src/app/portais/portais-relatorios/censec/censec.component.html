@@ -1,5 +1,11 @@
 <ng-container *ngIf="relatorio.censec.data">
   <div class="row">
+    <div class="col-md-12">
+      <h4><b>CENSEC - Dados Jurídicos</b></h4>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
     <div class="col-md-6">
       <a><b>Carga: </b>{{relatorio.censec.data.envio_carga.carga}}</a>
     </div>
@@ -112,5 +118,5 @@
 </ng-container>
 
 <ng-container *ngIf="relatorio.censec.erro">
-  <a>{{relatorio.arisp.erro}}</a>
+  <a>{{relatorio.censec.erro}}</a>
 </ng-container>

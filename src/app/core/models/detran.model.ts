@@ -1,3 +1,4 @@
+import { ArquivoModel } from './arquivo.model';
 export interface DetranModel {
     data: {
         dadosCNH: {
@@ -13,10 +14,7 @@ export interface DetranModel {
             identidade: string;
             cpf: string;
         };
-        anexo: [{
-            nome_arquivo?: string;
-            arquivo?: string;
-        }];
+        anexo: ArquivoModel[]
     };
     erro?: string;
 }

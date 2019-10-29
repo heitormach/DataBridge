@@ -1,7 +1,13 @@
 <ng-container *ngIf="relatorio.detran.data">
+  <div class="row">
+    <div class="col-md-12">
+      <h4><b>DETRAN - Dados de Veículos e Condutor</b></h4>
+    </div>
+  </div>
+  <hr>
   <div class="row" style="text-align: center">
     <div class="col-md-12">
-      <img *ngIf="relatorio.detran.data.anexo[0].arquivo" [src]="exibirFoto()">
+      <img *ngIf="relatorio.detran.data.anexo[1].arquivo" [src]="exibirFoto()">
     </div>
   </div>
 

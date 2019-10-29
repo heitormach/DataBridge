@@ -28,7 +28,7 @@ export class DetranComponent implements OnInit {
   }
 
   exibirFoto() {
-    return this.sanitizer.bypassSecurityTrustUrl('data:Image/*;base64,' + this.relatorio.detran.data.anexo[0].arquivo);
+    return this.sanitizer.bypassSecurityTrustUrl('data:Image/*;base64,' + this.relatorio.detran.data.anexo[1].arquivo);
   }
 
   download(arquivo: string, nome: string) {
